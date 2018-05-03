@@ -1,0 +1,44 @@
+@font-face {
+    font-family: airstrike;
+    src: url(../fonts/airstrike.ttf);
+}
+body{
+    background-color:tan;
+}
+.judul{
+    background-image: url(../img/banner.jpg);
+    width : 100%;
+    height : 25vh;
+    border:1px solid blanchedalmond;
+    border-radius : 5px;    
+}
+
+.judul h1{
+    margin : 0; 
+    text-align : center;
+    font-family:airstrike;
+    color :mediumaquamarine;
+    margin-top : 10px;
+    font-size : 5em;
+    text-shadow:-3px -3px 2px black;
+
+}
+
+.judul h1:hover{
+    transition : ease 0.5s;
+    font-size: 7em;
+    text-shadow:-3px -3px 2px red;
+    
+
+}
+
+.form{
+    width : 35%;
+    height : 65vh;
+    border : 10px solid black ; 
+    text-align : center;
+    margin : auto;
+    border-radius : 20px;
+
+
+}

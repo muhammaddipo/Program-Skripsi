@@ -6,16 +6,23 @@
 		<!-- OPTIONAL -->
 		<link rel="stylesheet" href="lib/w3.css">
 		<link rel="stylesheet" href="lib/w3-theme-riverside.css">
-		<link rel="stylesheet" href="style/index_style.css">
-		<!-- <link rel="stylesheet" href="fonts/listOfFonts.css"> -->
+		<link rel="stylesheet" href="style/indexStyle.css">
+	
 	</head>
 	<body>
 		<!-- CONTENT -->
-		<div class="container">
-			<img src="img/banner.jpg" alt="" style="width:100%;">
-			<div class="centered"><h1>E - LIBRARY</h1></div>
+		<div class="logo">
+			<img src="img/unpar.png" alt="">
+			<img src="img/pmunpar.png" alt="">
+			<img src="" alt="">
+
+
 		</div>
-		<a  href="">SIGN UP </a>
-		<a href=''>LOG IN </a>
+		<h1>E-Library</h1>
+		<div class="button">
+			<a href="pages/general/signUp.php">Sign Up</a>
+			<a href="">Log in</a>
+
+		</div>
 	</body>
 </html>
