@@ -11,5 +11,11 @@
 	</head>
 	<body>
 		<!-- CONTENT -->
+		<form action="../../model/loginVer.php" method='post'>
+			<input type="text" name="username" id="">
+			<br>
+			<input type="password" name="password" id="">
+			<input type="submit" value="login">
+		</form>
 	</body>
 </html>

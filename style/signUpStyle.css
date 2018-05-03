@@ -17,28 +17,108 @@ body{
     margin : 0; 
     text-align : center;
     font-family:airstrike;
-    color :mediumaquamarine;
+    color :white;
     margin-top : 10px;
     font-size : 5em;
-    text-shadow:-3px -3px 2px black;
+    text-shadow:-3px -3px 2px rgb(27, 15, 15);
 
 }
 
 .judul h1:hover{
     transition : ease 0.5s;
     font-size: 7em;
-    text-shadow:-3px -3px 2px red;
+    text-shadow:-3px -3px 2px rgb(33, 116, 185);
     
 
 }
 
+.quote1{
+    float : left;
+    width : 25%;
+    height: 65vh;
+    margin:2vw;
+}
+
+.quote1 q{
+    word-break: normal;
+    font-size : 3em;
+    font-family : airstrike;
+}
+
+
+
 .form{
-    width : 35%;
-    height : 65vh;
-    border : 10px solid black ; 
+    float : left;
+    width : 40%;
+    height : 70vh;
+    border : 10px solid black; 
     text-align : center;
     margin : auto;
-    border-radius : 20px;
+    border-radius : 15px;
+    font-family: airstrike;
+
+}
+
+.form input[type='submit']{
+    font-size : 2em;
+    background-color: tan;
+    border:none;
+    margin : 1vh 1vw;
+    border-radius : 10px;
+    
+    border : 2px solid black;
+    
+}
+.form input[type='submit']:hover{
+    border : 2px solid mediumseagreen; 
+    color : mediumseagreen;
+    transition : ease 0.5s;
+    border-radius : 10px;
+    
+}
+input[type='text']{
+    width : 60%;
+    border:none;
+    border-bottom : 1px solid black;
+    background-color:tan;
+}
+
+.form a{
+    font-size : 2em;
+    text-decoration : none;
+    padding : 10px 2px;
+    border : 2px solid black;
+    border-radius : 10px;
+    
+    
+}
+.form a:hover{
+    border : 2px solid maroon;
+    color : maroon;
+    font-size : 2em;
+    text-decoration : none;
+    border-radius : 10px;
+    transition : ease 0.5s;
+    
+}
+
+q{
+    color : antiquewhite;
+}
+
+label{
+    font-family : airstrike;    
+    font-size : 1.5em;
+}
+
+label:hover{
+    color : white;
+    transition : ease-in-out 0.3s;
+}
 
 
+input[type='text']:hover{
+    border : 1px solid black;
+    transition :ease 0.5s;
+    border-radius : 10px;
 }

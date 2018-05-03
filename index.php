@@ -21,7 +21,8 @@
 		<h1>E-Library</h1>
 		<div class="button">
 			<a href="pages/general/signUp.php">Sign Up</a>
-			<a href="">Log in</a>
+			
+			<a href="pages/general/login.php">Log in</a>
 
 		</div>
 	</body>

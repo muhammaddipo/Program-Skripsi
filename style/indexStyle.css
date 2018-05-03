@@ -23,19 +23,19 @@ body{
 
 h1{
     clear: both;
-    color : black;
+    color : yellow;
     font-size : 5em;
     font-family : airstrike;
     text-align:center;
     padding : 50px;
-    text-shadow:-3px -3px 2px white;
+    text-shadow:-4px -3px 2px mediumseagreen;
 }
 
 h1:hover{
     color : white;
     text-shadow:-3px -3px 2px black;
     transition : ease 0.5s;
-    font-size : 4em;
+    font-size : 5.5em;
 }
 .button {
     text-align : center;    
@@ -45,10 +45,12 @@ a{
     text-decoration : none;
     font-family : airstrike;
     border : 5px solid black;
-    padding:5px;
+    padding:7px;
     border-radius:10px;
     margin:10px;
     font-size : 2em;
+    font-weight: normal;
+    
     
 }
 
