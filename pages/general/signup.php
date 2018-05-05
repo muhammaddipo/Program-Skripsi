@@ -15,11 +15,12 @@
 		<?php
 			if(isset($_GET['status_SignUp'])){
 				if($_GET['status_SignUp']== 3){
+					include '../../model/'
 					echo"
 					<div id='myModal' class='modal'>
 						<div class='modal-content'>
 							<span class='close'>&times;</span>
-							<p>You have login as joko</p>
+							<p>You have login as </p>
 						</div>
 					</div>";
 				}
