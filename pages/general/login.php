@@ -7,16 +7,24 @@
 		<!-- OPTIONAL -->
 		<link rel="stylesheet" href="../../lib/w3.css">
 		<link rel="stylesheet" href="../../lib/w3-theme-riverside.css">
-		<link rel="stylesheet" href="../../style/style.css">
+		<link rel="stylesheet" href="../../style/LoginStyle.css">
 	</head>
 	<body>
 		<!-- CONTENT -->
+		<div class="HeaderLogin">
+			<h1>eLIBRARY</h1>
+		</div>
+		<div class="LoginBox">
 		<form action="../../model/loginVer.php" method='post'>
+			<p>USERNAME</p>
 			<input type="text" name="username" id="">
 			<br>
+			<p>PASSWORD</p>
 			<input type="password" name="password" id="">
-			<input type="submit" value="login">
+			<input type="submit" value="LOGIN">
+			<a href="../../index.php">CANCEL</a>	
 		</form>
+		</div>
 		<?php
 			if(isset($_GET['statusSalah'])){
 				if($_GET['statusSalah'] == 1){
