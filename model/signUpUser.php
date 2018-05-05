@@ -23,7 +23,6 @@
       $phone = $_POST['phone'];
       $address = $_POST['address'];
 
-      echo "$username <br> $password <br> $name <br> $email <br> $phone <br> $address";
 
       $sql = "INSERT INTO anggota (username , password , name , email , phone , address) 
                 VALUES ('$username' ,  '$password' , '$name' , '$email' , '$phone' , '$address')";
@@ -31,10 +30,9 @@
       $result = $mysqli->query($sql);
       if($result){
             include 'userClass.php';
-            $_SESSION['user'] = new userClass($name , $username);
-
-            echo "$_SESSION[user]->username";
-            // header("Location: ../pages/general/signUp.php?status_SignUp=3"); // 3 artinya berhasil sign up bakal munculin modal 
+            $_SESSION['user'] = new User($name , $username);
+           
+            header("Location: ../pages/general/signUp.php?status_SignUp=3"); // 3 artinya berhasil sign up bakal munculin modal 
       }
     }
  
