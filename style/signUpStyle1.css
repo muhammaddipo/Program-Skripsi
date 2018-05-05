@@ -6,8 +6,14 @@
     font-family: storybook;
     src: url(../fonts/storybook.TTF);
 }
-body{
-    background-color:tan;
+@font-face {
+    font-family: fonts;
+    src: url(../fonts/Candara.ttf);
+}
+body {
+    background: url("../img/banner3.jpg");
+    background-size: cover;
+    font-family: fonts;
 }
 
 
@@ -47,17 +53,16 @@ body{
 
 /*-------------------- modal css--------------------- */
 .judul{
-    background-image: url(../img/banner.jpg);
     width : 100%;
     height : 25vh;
-    border:1px solid blanchedalmond;
-    border-radius : 5px;    
+    border:3px solid blanchedalmond;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 12px 40px 0 rgba(0, 0, 0, 0.19);
+    margin: 5px;
 }
 
 .judul h1{
     margin : 0; 
     text-align : center;
-    font-family:storybook;
     color :white;
     margin-top : 10px;
     font-size : 5em;
@@ -83,21 +88,21 @@ body{
 .quote1 q{
     word-break: normal;
     font-size : 3em;
-    font-family : storybook;
 }
 
 
 
 .form{
+    width: 40%;
     float : left;
-    width : 45%;
-    height : 75vh;
-    border : 10px solid black; 
     text-align : center;
     margin : auto;
-    border-radius : 15px;
-    font-family: storybook;
-
+    background: rgba(255, 255, 255, 0.651);
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 12px 40px 0 rgba(0, 0, 0, 0.19);
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 65vh;
 }
 
 .form input[type='submit']{
@@ -153,8 +158,7 @@ q{
     color : antiquewhite;
 }
 
-label{
-    font-family : storybook;    
+label{  
     font-size : 1.5em;
 }
 

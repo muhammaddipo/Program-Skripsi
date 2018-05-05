@@ -1,67 +1,58 @@
 @font-face {
-    font-family: airstrike;
-    src: url(../fonts/airstrike.ttf);
+    font-family: fonts;
+    src: url(../fonts/Candara.ttf);
 }
-@font-face {
-    font-family: storybook;
-    src: url(../fonts/storybook.TTF);
-}
-html{
-    margin: 0;
-    padding : 0;
-    background-image:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.5)),url(../img/banner3.jpg);
+
+/* Index Page */
+body {
+    font-family: fonts;
+    background: url("../img/banner3.jpg");
     background-size: cover;
-    background-repeat: no-repeat;   
-    height: 100vh;
 }
+.Header
+{
+    text-align: center;
+    color: white;
 
-body{
-    padding : 0 ; 
-    margin : 0 ;
-}
 
-.logo img{
-    float: left;
-    width : 10%;
 }
-
-h1{
-    clear: both;
-    color :yellow;
-    font-size : 5em;
-    font-family : storybook ;
-    text-align:center;
-    padding : 50px;
-    text-shadow:-4px -3px 2px mediumseagreen;
+.Header h1
+{
+    padding:4% 9% 4% 9%;
+    font-size: 700%;
+    text-shadow: 3px 3px 5px #000000;
 }
-
-h1:hover{
-    color : white;
-    text-shadow:-3px -3px 2px black;
-    transition : ease 0.5s;
-    font-size : 5.5em;
+.Header h3
+{
+    text-shadow: 3px 3px 5px #000000;
 }
-.button {
-    text-align : center;    
-}
-
-a{
-    text-decoration : none;
-    font-family : airstrike;
-    border : 5px solid black;
-    padding:7px;
-    border-radius:10px;
-    margin:10px;
-    font-size : 2em;
-    font-weight: normal;
-    
+.Isi
+{
+    text-align: center;
     
 }
-
-a:hover{
+.Isi ul
+{
+    list-style-type: none;
+    padding:0px;
+}
+.Isi a
+{
+    display: block;
+    text-decoration: none;
+    border: 2px solid white;
+    outline: none;
     color:white;
-    border : 5px solid white;
-    transition : ease 0.5s;
-    
-
+    font-size: 200%;
+    border-radius: 20px;
+    background: transparent;
+    margin: 20px 35% 20px 35%;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 12px 40px 0 rgba(0, 0, 0, 0.19);
+}
+.Isi a:hover
+{
+    background: rgba(255, 255, 255, 0.582);
+    border: 2px solid white;
+    color: black;
+    cursor: pointer;
 }
