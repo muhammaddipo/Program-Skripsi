@@ -5,7 +5,7 @@
                     $mysqli->connect_errno . ") " . $mysqli->connect_error;
     }else{
 
-        echo "Successfully connected";
+        // echo "Successfully connected";
     }
 
 

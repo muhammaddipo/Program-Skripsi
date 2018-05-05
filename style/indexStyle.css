@@ -2,6 +2,10 @@
     font-family: airstrike;
     src: url(../fonts/airstrike.ttf);
 }
+@font-face {
+    font-family: storybook;
+    src: url(../fonts/storybook.TTF);
+}
 html{
     margin: 0;
     padding : 0;
@@ -23,9 +27,9 @@ body{
 
 h1{
     clear: both;
-    color : yellow;
+    color :yellow;
     font-size : 5em;
-    font-family : airstrike;
+    font-family : storybook ;
     text-align:center;
     padding : 50px;
     text-shadow:-4px -3px 2px mediumseagreen;

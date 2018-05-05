@@ -17,5 +17,16 @@
 			<input type="password" name="password" id="">
 			<input type="submit" value="login">
 		</form>
+		<?php
+			if(isset($_GET['statusSalah'])){
+				if($_GET['statusSalah'] == 1){
+					echo "<h1> PASSWORD SALAH </h1>";
+				}else{
+					echo "<h1> USERNAME SALAH</h1>";
+				}
+			}
+
+
+		?>
 	</body>
 </html>

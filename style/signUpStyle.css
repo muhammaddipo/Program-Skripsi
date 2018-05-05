@@ -2,9 +2,50 @@
     font-family: airstrike;
     src: url(../fonts/airstrike.ttf);
 }
+@font-face {
+    font-family: storybook;
+    src: url(../fonts/storybook.TTF);
+}
 body{
     background-color:tan;
 }
+
+
+/*modal css*/
+.modal{
+    display :  block ; 
+    position : fixed ; 
+    z-index : 1 ; 
+    padding : 100px ; 
+    left : 0 ; 
+    top : 0 ; 
+    width : 100% ; 
+    height : 100% ; 
+    overflow : auto  ; 
+    background-color : rgb(0,0,0);
+    background-color: rgba(0,0,0,0.5);
+    animation-name : fadeIn;
+    animation-duration :2s;
+
+    
+
+}
+
+.modal-content{
+    background-color : tan;
+    padding : 20px ; 
+    border : 1px solid #888; 
+    width : 80% ;
+    margin : auto;
+}
+
+@keyframes fadeIn{
+    from{opacity : 0;}
+    to{opacity : 1;}
+}
+
+
+/*-------------------- modal css--------------------- */
 .judul{
     background-image: url(../img/banner.jpg);
     width : 100%;
@@ -16,7 +57,7 @@ body{
 .judul h1{
     margin : 0; 
     text-align : center;
-    font-family:airstrike;
+    font-family:storybook;
     color :white;
     margin-top : 10px;
     font-size : 5em;
@@ -42,20 +83,20 @@ body{
 .quote1 q{
     word-break: normal;
     font-size : 3em;
-    font-family : airstrike;
+    font-family : storybook;
 }
 
 
 
 .form{
     float : left;
-    width : 40%;
-    height : 70vh;
+    width : 45%;
+    height : 75vh;
     border : 10px solid black; 
     text-align : center;
     margin : auto;
     border-radius : 15px;
-    font-family: airstrike;
+    font-family: storybook;
 
 }
 
@@ -76,13 +117,19 @@ body{
     border-radius : 10px;
     
 }
+
 input[type='text']{
     width : 60%;
     border:none;
     border-bottom : 1px solid black;
     background-color:tan;
 }
-
+input[type='password']{
+    width : 60%;
+    border:none;
+    border-bottom : 1px solid black;
+    background-color:tan;
+}
 .form a{
     font-size : 2em;
     text-decoration : none;
@@ -107,7 +154,7 @@ q{
 }
 
 label{
-    font-family : airstrike;    
+    font-family : storybook;    
     font-size : 1.5em;
 }
 
@@ -118,6 +165,11 @@ label:hover{
 
 
 input[type='text']:hover{
+    border : 1px solid black;
+    transition :ease 0.5s;
+    border-radius : 10px;
+}
+input[type='passwrod']:hover{
     border : 1px solid black;
     transition :ease 0.5s;
     border-radius : 10px;

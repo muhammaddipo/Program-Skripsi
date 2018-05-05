@@ -12,11 +12,13 @@
         if($passwordNow == $row['password']){
             echo "available";
         }else{
-            echo "wrong password";
+            header("Location: ../pages/general/login.php?statusSalah=1");
+            // echo "wrong password";
         }
 
    }else{
-       echo "wrong username";
+    header("Location: ../pages/general/login.php?statusSalah=2");
+    //   echo "wrong username";
    }
 
 
