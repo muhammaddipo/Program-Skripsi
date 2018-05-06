@@ -1,5 +1,6 @@
 <?php
-
+	include '../../model/userClass.php';
+	session_start();
 ?>
 <!DOCTYPE html>
 <html>
@@ -12,8 +13,15 @@
 		<link rel="stylesheet" href="../../style/style.css">
 		<link rel="stylesheet" href="../../lib/font-awesome.min.css">
 		<link rel="stylesheet" href="../../lib/font-awesome.css">
+		<link rel="stylesheet" href="../../style/usrStyle.css">
 	</head>
 	<body>
-		<!-- CONTENT -->
+		<div class="judul">
+			<h1>E-Library</h1>
+		</div>
+		<div class="navBar">
+
+				<h1>You are login as <?php echo $_SESSION['user']->getUsername()  ?></h1>
+		</div>
 	</body>
 </html>

@@ -10,7 +10,9 @@
    if($result && $result->num_rows > 0){
        $row = $result->fetch_array();
         if($passwordNow == $row['password']){
-            echo "available";
+            include 'userClass.php';
+            $_SESSION['user'] = new User($name , $username);
+            header("Location: ../pages/user/usr.php");
         }else{
             header("Location: ../pages/general/login.php?statusSalah=1");
             // echo "wrong password";
@@ -22,4 +24,4 @@
    }
 
 
-?>
+?>  
