@@ -1,21 +1,121 @@
-body{
+html{
+
     margin : 0 ;
     padding : 0 ;
-
 }
+
+p{
+    margin : 0;
+}
+
 
 .judul{
     width : 100%;
     float : left;
-    height : 20vh;
+    height : 15vh;
     background-image: url(../img/banner2.jpg);
     text-align:center;
+    margin : 0;
+    padding : 0;
 }
 
+
+
 .navBar{
-    display: inline;
-    clear:both;
+    clear:left;
+    float : left;
+    width:100%;
+    padding : 0px 2px;
+    background-color:rgb(123, 123, 170);
+}
+
+.navBar p {
+    float : left;
+    margin-left : 1vw;
+    margin-bottom : 1vh;
+}
+
+.navBar ul{
+    float : right;
+    padding : 0;
+    margin : 0;
+}
+
+.navBar ul li{
+    float:left;
+    list-style: none;
+    padding: 1vw;
+}
+
+.navBar li:hover,a:hover{
+    background-color: mediumseagreen;
+    color:white;
+}
+
+.mid{
+    float: left;
     width : 100%;
-    height : 10vh;
-    background-color : rgb(183, 199, 164);
+    height : 77.5vh;
+    background-color : blue;
+}
+
+.leftBar{
+    float: left;
+    width : 20vw;
+    background-color: green;
+    height : 77.5vh;
+
+}
+
+.leftBar p{
+    background-color : red;
+    padding : 1vh 1vw;
+    text-align : center;
+}
+
+.leftBar ul{
+    padding : 0;
+    margin-top : 0;
+}
+
+.leftBar ul li{
+    list-style : none;
+    padding : 1vh 0.5vw;
+    border-bottom : 1px solid black;
+}
+
+.leftBar ul li:hover{
+    background-color : mediumseagreen;
+}
+
+.midBar{
+    /* float: left; */
+    width:100%;
+    background-color :red;
+
+}
+
+
+
+.midBar h1{
+    margin : 0;
+    text-align : center;
+}
+
+.midContent{
+    /* width: 80%; */
+    background-color: yellow;
+    height : 60vh;
+    overflow: auto;
+    padding : 1vh 1vw;
+}
+
+.midContent h1{
+    margin-bottom : 1vh;
+}
+
+
+.midFooter p{
+    background-color: mediumpurple;
+    padding :3vh 2vw;
 }
