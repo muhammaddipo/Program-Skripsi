@@ -22,10 +22,42 @@
 			<p>You are login as <?php echo $_SESSION['user']->getUsername() ; ?></p>
 			
 			<ul>
-				<li><i class="fa fa-home"></i></li>
-				<li><i class="fa fa-newspaper-o"></i></li>
-				<li><i class="fa fa-envelope-o"></i></li>
-				<li><i class="fa fa-user"></i></li>
+				<li id="active">
+					<a href="usr.php">
+						<i class="fa fa-home" >
+
+						</i>
+					</a>
+				</li>
+				<li>
+					<a href="../general/news.php">
+						<i class="fa fa-newspaper-o">
+						
+						</i>
+					</a>
+				</li>
+				<li>
+					<a href="">
+						<i class="fa fa-envelope">
+						
+						</i>
+					</a>
+				</li>
+				<li>
+					<a href="../general/profile.php">
+						<i class="fa fa-user">
+						
+						</i>
+					</a>
+				</li>
+				<li>
+				<a href="../../?statusLogin=1">
+						<i class="fa fa-car">
+						
+						</i>
+					</a>
+				</li>
+				
 			</ul>
 		</div>
 
@@ -33,59 +65,30 @@
 			<div class="leftBar">
 				<p>Menu</p>
 				<ul>
-					<li>Book List</li>
-					<li>BorrowingHistory</li>
-					<li>Download Journals</li>
+					<li><a href="book.php">Book List</a></li>
+					<li><a href="">Borrowing History</a></li>
+					<li><a href="">Download Journals</a></li>
 				</ul>
 			</div>
 			<div class="midBar">
-				<h1>Welcome to eLibrary!</h1>
-				<div class="midContent">
+				<div class="midHeader">
 					<h1>About Us</h1>
 
+				</div>
+				<div class="midContent">
+
 					<p>
-					Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-					 Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-					 when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
-					 It has survived not only five centuries, 
-					 but also the leap into electronic typesetting, remaining essentially unchanged. 
-					 It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
-					  and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+					eLibrary is a simple Library web where you can download journals for free and search the books you need.
+					You were automatically registered as a member when you sign up.Look for the books you need in the book list
+					before you come to our library and borrow the books. We also provide you with today's news, just click the newspapaer
+					icon. if you have any questions, please contact us by e-mail(click the message icon)
 					</p>
-					<br>
-					<p>
-					Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-					 Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-					 when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
-					 It has survived not only five centuries, 
-					 but also the leap into electronic typesetting, remaining essentially unchanged. 
-					 It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
-					  and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-					</p>
-					<br>
-					<p>
-					Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-					 Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-					 when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
-					 It has survived not only five centuries, 
-					 but also the leap into electronic typesetting, remaining essentially unchanged. 
-					 It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
-					  and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-					</p>
-					<br>
-					<p>
-					Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-					 Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-					 when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
-					 It has survived not only five centuries, 
-					 but also the leap into electronic typesetting, remaining essentially unchanged. 
-					 It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
-					  and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-					</p>
+				
 				</div>
 
 				<div class="midFooter">
-					<p>&copy; Boundless-Learners,Hippow - eLibrary for Web Based Programming</p>
+					
+					<p>&copy; 2018 Boundless-Learners,Hippow - eLibrary for Web Based Programming</p>
 				</div>
 			</div>
 		</div>

@@ -52,6 +52,11 @@ p{
     color:white;
 }
 
+#active{
+    background-color:mediumseagreen;
+    color:white;
+}
+
 .mid{
     float: left;
     width : 100%;
@@ -61,7 +66,7 @@ p{
 
 .leftBar{
     float: left;
-    width : 20vw;
+    width : 20%;
     background-color: green;
     height : 77.5vh;
 
@@ -88,10 +93,43 @@ p{
     background-color : mediumseagreen;
 }
 
-.midBar{
-    /* float: left; */
-    width:100%;
+.leftBar a{
+    text-decoration : none;
+}
+
+.midHeader{
+    clear: left;
+    width:  80vw;
+    /* height : 9vh; */
+    float: left;
+    background-color: aqua;
+   
+}
+
+.midHeader h1{
+    margin : 0;
+    float : left;
+    
+}
+
+.midHeader h2{
+    float: left;
+}
+
+.midHeader form{
+    float:right;
+    padding : 1vw 1vh;
+}
+
+.midHeader input , label , select{
+  
+}
+
+.midBar{    
+    float: left;
+    width:80%;
     background-color :red;
+    padding : 0;
 
 }
 
@@ -99,23 +137,113 @@ p{
 
 .midBar h1{
     margin : 0;
-    text-align : center;
+    /* text-align : center; */
 }
 
 .midContent{
-    /* width: 80%; */
+    width: 100%;
+    float : left;
     background-color: yellow;
     height : 60vh;
     overflow: auto;
-    padding : 1vh 1vw;
+    padding : 1vh 1.2vw;
 }
 
-.midContent h1{
-    margin-bottom : 1vh;
+/*
+    --CSS BUAT PHP PROFILE IMAGE-- 
+*/
+.profileImg{
+    text-align:center;
+    background-color: gainsboro;
+    margin : auto;    
+    width : 30%;
+}
+
+.profileImg img{
+    border-bottom:1px solid black;
+    width:100%;
+
+}
+
+.profileImg button{
+    padding : 1vh 1vw;
+    width : 100%;
+    background-color: blue;
+    color:white;
+}
+
+#statusUpdate{
+    margin : 0;
+    padding : 0;
+    text-align:center;
+}
+/*
+ ----- -------------------------------------------
+*/
+
+/*
+    CSS BUAT MODAL--------------------------------
+
+*/
+.modal{
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    animation-name : fadeIn;
+    animation-duration : 1s;
+}
+
+.modal-content {
+    text-align:center;
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 40%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+@keyframes fadeIn{
+    from{opacity:0;}
+    to{opacity:1;}
+}
+
+/*
+    ----------------------------------------
+*/
+
+
+
+.midFooter{
+
+    background-color: mediumpurple;
 }
 
 
 .midFooter p{
-    background-color: mediumpurple;
-    padding :3vh 2vw;
+    padding :4.4vh 3vw;
+    
 }
+
+

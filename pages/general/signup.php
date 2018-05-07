@@ -1,4 +1,8 @@
-<?php  ?>
+<?php
+include '../../model/userClass.php';
+session_start();
+
+?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -15,12 +19,14 @@
 		<?php
 			if(isset($_GET['status_SignUp'])){
 				if($_GET['status_SignUp']== 3){
-					include '../../model/';
 					echo"
 					<div id='myModal' class='modal'>
 						<div class='modal-content'>
 							<span class='close'>&times;</span>
-							<p>You have successfully registered  as joko </p>
+							<p>You have successfully registered  as ".$_SESSION['user']->getName()." </p>
+							<a href='../user/usr.php'>
+								log In
+							</a>
 						</div>
 					</div>";
 				}

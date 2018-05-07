@@ -24,14 +24,23 @@
       $address = $_POST['address'];
 
 
-      $sql = "INSERT INTO anggota (username , password , name , email , phone , address) 
-                VALUES ('$username' ,  '$password' , '$name' , '$email' , '$phone' , '$address')";
+      $sql = "INSERT INTO anggota (username , password , name , email , phone , address , role) 
+                VALUES ('$username' ,  '$password' , '$name' , '$email' , '$phone' , '$address' ,'user')";
 
       $result = $mysqli->query($sql);
       if($result){
+
+            $sql2 = "SELECT * FROM anggota WHERE username='$username'";
+            $result2 = $mysqli->query($sql2);
+
+            if($result2 && $result2->num_rows > 0){
+                $row2 = $result2->fetch_array();
+                $id = $row2['id_Anggota'];
+            }
+
             include 'userClass.php';
-            $_SESSION['user'] = new User($name , $username);
-           
+            $_SESSION['user'] = new User($name , $username , $id );
+            // echo $_SESSION['user']->getUsername()." <br> ".$_SESSION['user']->getName()." <br>". $_SESSION['user']->getId();
             header("Location: ../pages/general/signUp.php?status_SignUp=3"); // 3 artinya berhasil sign up bakal munculin modal 
       }
     }

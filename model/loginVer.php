@@ -1,5 +1,6 @@
 <?php
   include 'db.php';
+  include 'userClass.php';
   session_start();
  
    $usernameNow = $_POST['username'];
@@ -11,10 +12,9 @@
    if($result && $result->num_rows > 0){
        $row = $result->fetch_array();
         if($passwordNow == $row['password']){
-            include 'userClass.php';
             // $_SESSION['user'] = new User($row['name'] , $row['username']);
             // echo $_SESSION['user']->getUsername();
-            $_SESSION['g'] = "antap";
+            $_SESSION['user'] = new User($row['username'] , $row['name'] , $row['id_Anggota']);
             
             header("Location: ../pages/user/usr.php");
         }else{
