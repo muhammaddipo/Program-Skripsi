@@ -1,4 +1,8 @@
 <!DOCTYPE html>
+<?php
+	session_start();
+	
+	?>
 <html>
 	<head>
 		<title>eLibrary</title>
@@ -24,5 +28,12 @@
 				</li>
 			</ul>
 		</div>
+			<?php
+				if(isset($_GET['statusLogin'])){
+					session_unset();
+					session_destroy();
+					echo "<p style='color:mediumseagreen;text-align:center'>successfully Log out</p>";	
+				}
+			?>
 	</body>
 </html>

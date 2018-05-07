@@ -1,4 +1,11 @@
-<?php  ?>
+<?php 
+	session_start();
+	if(isset($_GET['statusLogIn'])){
+		session_unset();
+		session_destroy();
+		echo "mantap";
+	}
+?>
 <!DOCTYPE html>
 <html>
 	<head>

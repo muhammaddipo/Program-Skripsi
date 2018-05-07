@@ -1,21 +1,249 @@
-body{
+html{
+
     margin : 0 ;
     padding : 0 ;
-
 }
+
+p{
+    margin : 0;
+}
+
 
 .judul{
     width : 100%;
     float : left;
-    height : 20vh;
+    height : 15vh;
     background-image: url(../img/banner2.jpg);
     text-align:center;
+    margin : 0;
+    padding : 0;
 }
 
+
+
 .navBar{
-    display: inline;
-    clear:both;
-    width : 100%;
-    height : 10vh;
-    background-color : rgb(183, 199, 164);
+    clear:left;
+    float : left;
+    width:100%;
+    padding : 0px 2px;
+    background-color:rgb(123, 123, 170);
 }
+
+.navBar p {
+    float : left;
+    margin-left : 1vw;
+    margin-bottom : 1vh;
+}
+
+.navBar ul{
+    float : right;
+    padding : 0;
+    margin : 0;
+}
+
+.navBar ul li{
+    float:left;
+    list-style: none;
+    padding: 1vw;
+}
+
+.navBar li:hover,a:hover{
+    background-color: mediumseagreen;
+    color:white;
+}
+
+#active{
+    background-color:mediumseagreen;
+    color:white;
+}
+
+.mid{
+    float: left;
+    width : 100%;
+    height : 77.5vh;
+    background-color : blue;
+}
+
+.leftBar{
+    float: left;
+    width : 20%;
+    background-color: green;
+    height : 77.5vh;
+
+}
+
+.leftBar p{
+    background-color : red;
+    padding : 1vh 1vw;
+    text-align : center;
+}
+
+.leftBar ul{
+    padding : 0;
+    margin-top : 0;
+}
+
+.leftBar ul li{
+    list-style : none;
+    padding : 1vh 0.5vw;
+    border-bottom : 1px solid black;
+}
+
+.leftBar ul li:hover{
+    background-color : mediumseagreen;
+}
+
+.leftBar a{
+    text-decoration : none;
+}
+
+.midHeader{
+    clear: left;
+    width:  80vw;
+    /* height : 9vh; */
+    float: left;
+    background-color: aqua;
+   
+}
+
+.midHeader h1{
+    margin : 0;
+    float : left;
+    
+}
+
+.midHeader h2{
+    float: left;
+}
+
+.midHeader form{
+    float:right;
+    padding : 1vw 1vh;
+}
+
+.midHeader input , label , select{
+  
+}
+
+.midBar{    
+    float: left;
+    width:80%;
+    background-color :red;
+    padding : 0;
+
+}
+
+
+
+.midBar h1{
+    margin : 0;
+    /* text-align : center; */
+}
+
+.midContent{
+    width: 100%;
+    float : left;
+    background-color: yellow;
+    height : 60vh;
+    overflow: auto;
+    padding : 1vh 1.2vw;
+}
+
+/*
+    --CSS BUAT PHP PROFILE IMAGE-- 
+*/
+.profileImg{
+    text-align:center;
+    background-color: gainsboro;
+    margin : auto;    
+    width : 30%;
+}
+
+.profileImg img{
+    border-bottom:1px solid black;
+    width:100%;
+
+}
+
+.profileImg button{
+    padding : 1vh 1vw;
+    width : 100%;
+    background-color: blue;
+    color:white;
+}
+
+#statusUpdate{
+    margin : 0;
+    padding : 0;
+    text-align:center;
+}
+/*
+ ----- -------------------------------------------
+*/
+
+/*
+    CSS BUAT MODAL--------------------------------
+
+*/
+.modal{
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    animation-name : fadeIn;
+    animation-duration : 1s;
+}
+
+.modal-content {
+    text-align:center;
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 40%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+@keyframes fadeIn{
+    from{opacity:0;}
+    to{opacity:1;}
+}
+
+/*
+    ----------------------------------------
+*/
+
+
+
+.midFooter{
+
+    background-color: mediumpurple;
+}
+
+
+.midFooter p{
+    padding :4.4vh 3vw;
+    
+}
+
+
