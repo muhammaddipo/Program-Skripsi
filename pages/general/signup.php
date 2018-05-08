@@ -11,7 +11,7 @@ session_start();
 		<!-- OPTIONAL -->
 		<link rel="stylesheet" href="../../lib/w3.css">
 		<link rel="stylesheet" href="../../lib/w3-theme-riverside.css">
-		<link rel="stylesheet" href="../../style/signUpStyle.css">
+		<link rel="stylesheet" href="../../style/signUpStyle1.css">
 		<script type="text/javascript" src="../../js/signUpScript.js"></script>
 	</head>
 	<body>

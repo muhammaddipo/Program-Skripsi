@@ -1,13 +1,20 @@
 @font-face {
-    font-family: airstrike;
-    src: url(../fonts/airstrike.ttf);
+    font-family: Input;
+    src: url(../fonts/Candara.ttf);
 }
 @font-face {
-    font-family: storybook;
-    src: url(../fonts/storybook.TTF);
+    font-family: fonts;
+    src: url(../fonts/CollegiateInsideFLF.ttf);
 }
-body{
-    background-color:tan;
+@font-face {
+    font-family: College;
+    src: url(../fonts/College.ttf);
+}
+
+body {
+    background: url("../img/banner3.jpg");
+    background-size: cover;
+    
 }
 
 
@@ -26,9 +33,6 @@ body{
     background-color: rgba(0,0,0,0.5);
     animation-name : fadeIn;
     animation-duration :2s;
-
-    
-
 }
 
 .modal-content{
@@ -46,105 +50,101 @@ body{
 
 
 /*-------------------- modal css--------------------- */
-.judul{
-    background-image: url(../img/banner.jpg);
-    width : 100%;
-    height : 25vh;
-    border:1px solid blanchedalmond;
-    border-radius : 5px;    
+.judul
+{
+    text-align: center;
+    color: white;
+    border: 3px solid white;
+    margin: 5px;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 12px 40px 0 rgba(0, 0, 0, 0.19);
+    
 }
-
-.judul h1{
+.judul h1
+{
     margin : 0; 
-    text-align : center;
-    font-family:storybook;
     color :white;
     margin-top : 10px;
     font-size : 5em;
     text-shadow:-3px -3px 2px rgb(27, 15, 15);
-
-}
-
-.judul h1:hover{
-    transition : ease 0.5s;
-    font-size: 7em;
-    text-shadow:-3px -3px 2px rgb(33, 116, 185);
-    
-
+    font-family: College;
 }
 
 .quote1{
     float : left;
-    width : 25%;
-    height: 65vh;
-    margin:2vw;
+    width : 23%;
+    margin: 2vw;
+    font-family: fonts;
+    text-align: center;
 }
 
 .quote1 q{
     word-break: normal;
-    font-size : 3em;
-    font-family : storybook;
+    font-size : 2em;
+    text-shadow:-3px -3px 2px rgb(27, 15, 15);
 }
-
 
 
 .form{
-    float : left;
-    width : 45%;
-    height : 75vh;
-    border : 10px solid black; 
-    text-align : center;
-    margin : auto;
-    border-radius : 15px;
-    font-family: storybook;
-
+    width: 45vw;
+    background:rgba(255, 255, 255, 0.301);
+    top: 75vh;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    padding: 50px 20px 10px 20px;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 12px 40px 0 rgba(0, 0, 0, 0.19);
+    margin-bottom: 1%;
+    font-family: Input;
+    border-radius: 10px;
 }
 
 .form input[type='submit']{
-    font-size : 2em;
-    background-color: tan;
-    border:none;
-    margin : 1vh 1vw;
-    border-radius : 10px;
-    
-    border : 2px solid black;
+    display: block;
+    text-decoration: none;
+    outline: none;
+    background: transparent;
+    color: white;
+    font-size: 20px;
+    padding: 10px 20px 10px 20px;
+    border-radius: 20px;
+    border: 2px solid white;
+    margin: 20px 2px 20px 2px;
+    width: 100%;
     
 }
 .form input[type='submit']:hover{
-    border : 2px solid mediumseagreen; 
-    color : mediumseagreen;
+    background: rgba(255, 255, 255, 0.664);     
+    color: rgb(112, 112, 112);
+    border: 2px solid transparent;
     transition : ease 0.5s;
-    border-radius : 10px;
     
 }
 
-input[type='text']{
-    width : 60%;
-    border:none;
-    border-bottom : 1px solid black;
-    background-color:tan;
-}
-input[type='password']{
-    width : 60%;
-    border:none;
-    border-bottom : 1px solid black;
-    background-color:tan;
+input[type='text'], input[type='password']{
+    border: none;
+    border-bottom: 2px solid rgb(255, 255, 255);
+    background: transparent;
+    outline: none;
+    width: 100%;
+    
 }
 .form a{
-    font-size : 2em;
-    text-decoration : none;
-    padding : 10px 2px;
-    border : 2px solid black;
-    border-radius : 10px;
-    
-    
+    display: block;
+    text-decoration: none;
+    outline: none;
+    background: transparent;
+    color: white;
+    font-size: 20px;
+    padding: 10px 20px 10px 20px;
+    border-radius: 20px;
+    border: 2px solid white;
+    margin: 10px 2px 10px 2px;
+    text-align: center;
 }
 .form a:hover{
-    border : 2px solid maroon;
-    color : maroon;
-    font-size : 2em;
-    text-decoration : none;
-    border-radius : 10px;
+    background: rgba(255, 255, 255, 0.664);
+    color: rgb(112, 112, 112);
+    border: 2px solid transparent;
     transition : ease 0.5s;
     
 }
@@ -153,24 +153,13 @@ q{
     color : antiquewhite;
 }
 
-label{
-    font-family : storybook;    
+label{  
     font-size : 1.5em;
+    color: white;
 }
 
 label:hover{
-    color : white;
+    color : rgb(112, 112, 112);
     transition : ease-in-out 0.3s;
 }
 
-
-input[type='text']:hover{
-    border : 1px solid black;
-    transition :ease 0.5s;
-    border-radius : 10px;
-}
-input[type='passwrod']:hover{
-    border : 1px solid black;
-    transition :ease 0.5s;
-    border-radius : 10px;
-}

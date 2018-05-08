@@ -1,11 +1,15 @@
 @font-face {
-    font-family: fonts;
+    font-family: Input;
     src: url(../fonts/Candara.ttf);
+}
+@font-face {
+    font-family: College;
+    src: url(../fonts/College.ttf);
 }
 
 /* Index Page */
 body {
-    font-family: fonts;
+    
     background: url("../img/banner3.jpg");
     background-size: cover;
 }
@@ -13,23 +17,23 @@ body {
 {
     text-align: center;
     color: white;
-
-
 }
 .Header h1
 {
     padding:4% 9% 4% 9%;
     font-size: 700%;
     text-shadow: 3px 3px 5px #000000;
+    font-family: College;
 }
 .Header h3
 {
     text-shadow: 3px 3px 5px #000000;
+    font-family: Candara;
 }
 .Isi
 {
     text-align: center;
-    
+    font-family: Input;
 }
 .Isi ul
 {
