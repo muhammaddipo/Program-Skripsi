@@ -14,9 +14,13 @@
         if($passwordNow == $row['password']){
             // $_SESSION['user'] = new User($row['name'] , $row['username']);
             // echo $_SESSION['user']->getUsername();
-            $_SESSION['user'] = new User($row['username'] , $row['name'] , $row['id_Anggota']);
+            $_SESSION['user'] = new User($row['username'] , $row['name'] , $row['id_Anggota'] , $row['role']);
             
-            header("Location: ../pages/user/usr.php");
+            if($row['role'] == 'user'){
+                header("Location: ../pages/user/usr.php");
+            }else{
+                header("Location: ../pages/admin/adm.php");
+            }
         }else{
             header("Location: ../pages/general/login.php?statusSalah=1");
             // echo "wrong password";

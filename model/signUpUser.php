@@ -39,7 +39,7 @@
             }
 
             include 'userClass.php';
-            $_SESSION['user'] = new User($name , $username , $id );
+            $_SESSION['user'] = new User($name , $username , $id , 'user');
             // echo $_SESSION['user']->getUsername()." <br> ".$_SESSION['user']->getName()." <br>". $_SESSION['user']->getId();
             header("Location: ../pages/general/signUp.php?status_SignUp=3"); // 3 artinya berhasil sign up bakal munculin modal 
       }
