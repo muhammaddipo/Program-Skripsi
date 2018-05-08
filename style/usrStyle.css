@@ -1,38 +1,66 @@
-html{
+@font-face {
+    font-family: Input;
+    src: url(../fonts/Candara.ttf);
+}
+@font-face {
+    font-family: College;
+    src: url(../fonts/College.ttf);
+}
+@font-face {
+    font-family: fonts;
+    src: url(../fonts/CollegiateInsideFLF.ttf);
+}
 
+html{
+    background: url("../img/banner3.jpg");
+    background-size: cover;
     margin : 0 ;
-    padding : 0 ;
+    padding : 5px;
 }
 
 p{
     margin : 0;
 }
 
-
 .judul{
     width : 100%;
     float : left;
     height : 15vh;
-    background-image: url(../img/banner2.jpg);
+    background:transparent;
     text-align:center;
     margin : 0;
     padding : 0;
+    border: 2px solid white;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 12px 40px 0 rgba(0, 0, 0, 0.19);
+    
 }
 
-
+.judul h1
+{
+    font-family: College;
+    color: white;
+    font-size: 350%;
+}
 
 .navBar{
     clear:left;
     float : left;
     width:100%;
-    padding : 0px 2px;
-    background-color:rgb(123, 123, 170);
+    background-color:rgba(255, 255, 255, 0.37);
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 12px 40px 0 rgba(0, 0, 0, 0.19);
 }
 
 .navBar p {
     float : left;
     margin-left : 1vw;
-    margin-bottom : 1vh;
+    margin-top: 2vh;
+    font-size: 120%;
+    color: rgb(29, 29, 29);
+    font-family: fonts;
 }
 
 .navBar ul{
@@ -44,12 +72,17 @@ p{
 .navBar ul li{
     float:left;
     list-style: none;
-    padding: 1vw;
+    padding: 0.8vw;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    margin: 2px;
 }
 
-.navBar li:hover,a:hover{
+.navBar li:hover{
     background-color: mediumseagreen;
     color:white;
+    cursor: pointer;
+    transition: ease 0.5s;
 }
 
 #active{
@@ -61,21 +94,29 @@ p{
     float: left;
     width : 100%;
     height : 77.5vh;
-    background-color : blue;
+    background-color : transparent;
 }
 
 .leftBar{
     float: left;
-    width : 20%;
-    background-color: green;
+    width : 19%;
+    background-color: rgba(255, 255, 255, 0.795);
     height : 77.5vh;
-
+    margin-right: 5px;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    font-family: Input;
+    color: rgb(0, 0, 0);
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 12px 40px 0 rgba(0, 0, 0, 0.19);
 }
 
 .leftBar p{
-    background-color : red;
+    background-color : mediumseagreen;
     padding : 1vh 1vw;
     text-align : center;
+    border: 1px solid mediumseagreen;
+    border-radius: 10px;
+    color: white;
 }
 
 .leftBar ul{
@@ -85,12 +126,18 @@ p{
 
 .leftBar ul li{
     list-style : none;
-    padding : 1vh 0.5vw;
+    padding : 1vh 1vw;
     border-bottom : 1px solid black;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    margin-top: 5px;
 }
 
 .leftBar ul li:hover{
     background-color : mediumseagreen;
+    color:white;
+    cursor: pointer;
+    transition: ease 0.5s;
 }
 
 .leftBar a{
@@ -99,17 +146,19 @@ p{
 
 .midHeader{
     clear: left;
-    width:  80vw;
+    width:  79vw;
     /* height : 9vh; */
     float: left;
-    background-color: aqua;
-   
+    background-color: rgb(60, 179, 114);
+    border: 1px solid transparent;
+    border-radius: 10px;
+    padding: 0vh 1.2vw 0vh 1.2vw;
 }
 
 .midHeader h1{
     margin : 0;
     float : left;
-    
+    font-family: Input;
 }
 
 .midHeader h2{
@@ -121,16 +170,12 @@ p{
     padding : 1vw 1vh;
 }
 
-.midHeader input , label , select{
-  
-}
 
 .midBar{    
     float: left;
     width:80%;
-    background-color :red;
+    background-color :transparent;
     padding : 0;
-
 }
 
 
@@ -141,12 +186,15 @@ p{
 }
 
 .midContent{
-    width: 100%;
+    width: 79vw;
     float : left;
-    background-color: yellow;
-    height : 60vh;
+    background-color: rgba(255, 255, 255, 0.479);
+    height : 64vh;
     overflow: auto;
-    padding : 1vh 1.2vw;
+    padding : 3vh 1.2vw;
+    margin-top: 5px;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 12px 40px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 10px;
 }
 
 /*
@@ -154,22 +202,36 @@ p{
 */
 .profileImg{
     text-align:center;
-    background-color: gainsboro;
+    background-color: mediumseagreen;
     margin : auto;    
     width : 30%;
+    border-radius: 10%;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 12px 40px 0 rgba(0, 0, 0, 0.19);
+    padding: 10px;
 }
 
 .profileImg img{
-    border-bottom:1px solid black;
+    border-bottom:1px solid transparent;
     width:100%;
-
+    border-radius: 50%;
 }
 
 .profileImg button{
     padding : 1vh 1vw;
-    width : 100%;
-    background-color: blue;
-    color:white;
+    width : 65%;
+    background-color: white;
+    color: rgb(0, 0, 0);
+    border-radius: 30px;
+    border: 2px solid transparent;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 12px 40px 0 rgba(0, 0, 0, 0.19);
+    font-family: Input;
+    margin-top: 5px;
+}
+.profileImg button:hover{
+    background-color: mediumseagreen;
+    color: white;
+    cursor: pointer;
+    transition : ease 0.5s;
 }
 
 #statusUpdate{
@@ -204,9 +266,38 @@ p{
     text-align:center;
     background-color: #fefefe;
     margin: 15% auto; /* 15% from the top and centered */
-    padding: 20px;
     border: 1px solid #888;
-    width: 40%; /* Could be more or less, depending on screen size */
+    width: 30%; /* Could be more or less, depending on screen size */
+    padding: 0px 30px 0px 30px;
+    font-family: Input;
+}
+
+.modal-content input[type='submit']{
+    display: block;
+    text-decoration: none;
+    outline: none;
+    background: mediumseagreen;
+    color: white;
+    font-size: 20px;
+    padding: 10px 20px 10px 20px;
+    border-radius: 20px;
+    border: 2px solid white;
+    margin: 20px 2px 20px 2px;
+    width: 100%;
+}
+.modal-content input[type='submit']:hover{
+    background: rgb(175, 175, 175);
+    color: white;
+    cursor: pointer;
+    transition : ease-in-out 0.3s;
+}
+
+.modal-content input[type='text'],input[type='password'],input[type='number']{
+    border: none;
+    border-bottom: 1px solid rgb(116, 116, 116);
+    background: transparent;
+    outline: none;
+    width: 100%;
 }
 
 /* The Close Button */
@@ -236,14 +327,15 @@ p{
 
 
 .midFooter{
-
-    background-color: mediumpurple;
+    background:transparent;
+    width: 79vw;
 }
 
 
 .midFooter p{
-    padding :4.4vh 3vw;
-    
+    padding :0vw;
+    color: rgb(255, 255, 255);
+    text-shadow:-1px -1px 2px rgb(27, 15, 15);
 }
 
 

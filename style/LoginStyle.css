@@ -1,3 +1,18 @@
+
+@font-face {
+    font-family: Input;
+    src: url(../fonts/Candara.ttf);
+}
+
+@font-face {
+    font-family: College;
+    src: url(../fonts/College.ttf);
+}
+
+body {
+    background: url("../img/banner3.jpg");
+    background-size: cover;
+}
 .HeaderLogin
 {
     text-align: center;
@@ -9,21 +24,27 @@
 }
 .HeaderLogin h1
 {
-    padding:1% 9% 1% 9%;
-    font-size: 500%;
-    text-shadow: 3px 3px 5px #000000;
+    margin : 0; 
+    color :white;
+    margin-top : 10px;
+    font-size : 5em;
+    text-shadow:-3px -3px 2px rgb(27, 15, 15);
+    font-family: College;
 }
+
 .LoginBox
 {
     width: 50vw;
     background:rgba(255, 255, 255, 0.301);
-    top: 65vh;
+    top: 60vh;
     left: 50%;
     position: absolute;
     transform: translate(-50%,-50%);
     padding: 50px 20px 10px 20px;
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 12px 40px 0 rgba(0, 0, 0, 0.19);
-
+    font-family: Input;
+    border: 1px solid transparent;
+    border-radius: 10px;
 }
 
 .LoginBox input[type="text"], input[type="password"]
@@ -36,24 +57,19 @@
     
 }
 
-.LoginBox p
+.LoginBox label
 {
     margin: 0;
     padding: 0;
     color: white;
-    font-size: 20px;
+    font-size: 1.5em;
 }
 
-.LoginBox img
-{
-    width: 100px;
-    border-radius: 50%;
-    border: 2px solid white;
-    position: absolute;
-    top: -50px;
-    left: calc(50% - 50px);
-
+.LoginBox label:hover{
+    color : rgb(112, 112, 112);
+    transition : ease-in-out 0.3s;
 }
+
 
 .LoginBox a
 {
@@ -68,16 +84,6 @@
     border: 2px solid white;
     margin: 10px 2px 10px 2px;
     text-align: center;
-}
-@font-face {
-    font-family: fonts;
-    src: url(../fonts/Candara.ttf);
-}
-
-body {
-    font-family: fonts;
-    background: url("../img/banner3.jpg");
-    background-size: cover;
 }
 .LoginBox a:hover
 {

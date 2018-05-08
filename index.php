@@ -32,7 +32,7 @@
 				if(isset($_GET['statusLogin'])){
 					session_unset();
 					session_destroy();
-					echo "<p style='color:mediumseagreen;text-align:center'>successfully Log out</p>";	
+					echo "<p style='color:green;text-align:center;background:white'>successfully Log out</p>";	
 				}
 			?>
 	</body>
