@@ -12,7 +12,7 @@
 		<link rel="stylesheet" href="../../lib/w3-theme-riverside.css">
 		<link rel="stylesheet" href="../../lib/font-awesome.min.css">
 		<link rel="stylesheet" href="../../lib/font-awesome.css">
-		<link rel="stylesheet" href="../../style/adminStyle.css">
+		<link rel="stylesheet" href="../../style/usrStyle1.css">
 	</head>
 	<body>
 		<div class="judul">
@@ -60,7 +60,7 @@
 				</li>
 				<li>
 				<a href="../../?statusLogin=1">
-						<i class="fa fa-car">
+						<i class="fa fa-close">
 						
 						</i>
 					</a>
@@ -84,8 +84,8 @@
 							<li id='active'><a href='journals.php'>Download Journals</a></li> ";
 						}else{
 							echo "<li><a href='../admin/books.php'>Book List</a></li>
-							<li><a href=''>Member List</a></li>
-							<li><a href=''>Administrator List</a></li>
+							<li><a href='../admin/member.php'>Member List</a></li>
+							<li><a href='../admin/admList.php'>Administrator List</a></li>
 							<li id='active'><a href='journals.php'>Download Journals</a></li> ";
 						}
 

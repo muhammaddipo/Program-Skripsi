@@ -87,11 +87,11 @@ body {
 .form{
     width: 45vw;
     background:rgba(255, 255, 255, 0.301);
-    top: 75vh;
+    top: 58vh;
     left: 50%;
     position: absolute;
     transform: translate(-50%,-50%);
-    padding: 50px 20px 10px 20px;
+    padding: 20px 20px 10px 20px;
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 12px 40px 0 rgba(0, 0, 0, 0.19);
     margin-bottom: 1%;
     font-family: Input;
@@ -105,19 +105,18 @@ body {
     background: transparent;
     color: white;
     font-size: 20px;
-    padding: 10px 20px 10px 20px;
+    padding: 5px 20px 5px 20px;
     border-radius: 20px;
     border: 2px solid white;
-    margin: 20px 2px 20px 2px;
-    width: 100%;
-    
+    margin: 0px 2px 10px 2px;
+    width: 48%;
+    float: left;
 }
 .form input[type='submit']:hover{
     background: rgba(255, 255, 255, 0.664);     
     color: rgb(112, 112, 112);
     border: 2px solid transparent;
     transition : ease 0.5s;
-    
 }
 
 input[type='text'], input[type='password']{
@@ -126,7 +125,6 @@ input[type='text'], input[type='password']{
     background: transparent;
     outline: none;
     width: 100%;
-    
 }
 .form a{
     display: block;
@@ -135,11 +133,13 @@ input[type='text'], input[type='password']{
     background: transparent;
     color: white;
     font-size: 20px;
-    padding: 10px 20px 10px 20px;
+    padding: 5px 20px 5px 20px;
     border-radius: 20px;
     border: 2px solid white;
-    margin: 10px 2px 10px 2px;
+    margin: 0px 2px 10px 2px;
     text-align: center;
+    width: 48%;
+    float: right;
 }
 .form a:hover{
     background: rgba(255, 255, 255, 0.664);
@@ -155,11 +155,11 @@ q{
 
 label{  
     font-size : 1.5em;
-    color: white;
+    color: rgb(0, 0, 0);
 }
 
 label:hover{
-    color : rgb(112, 112, 112);
+    color : rgb(255, 255, 255);
     transition : ease-in-out 0.3s;
 }
 

@@ -23,7 +23,7 @@
 		<link rel="stylesheet" href="../../lib/w3-theme-riverside.css">
 		<link rel="stylesheet" href="../../lib/font-awesome.min.css">
 		<link rel="stylesheet" href="../../lib/font-awesome.css">
-		<link rel="stylesheet" href="../../style/usrStyle.css">
+		<link rel="stylesheet" href="../../style/usrStyle1.css">
 		<script type=text/javascript src="../../js/booksScript.js"></script>		
 	</head>
 	<body>
@@ -63,7 +63,7 @@
 				</li>
 				<li>
 				<a href="../../?statusLogin=1">
-						<i class="fa fa-car">
+						<i class="fa fa-close">
 						
 						</i>
 					</a>

@@ -12,7 +12,7 @@
 		<link rel="stylesheet" href="../../lib/w3-theme-riverside.css">
 		<link rel="stylesheet" href="../../lib/font-awesome.min.css">
 		<link rel="stylesheet" href="../../lib/font-awesome.css">
-		<link rel="stylesheet" href="../../style/usrStyle.css">
+		<link rel="stylesheet" href="../../style/usrStyle1.css">
 	</head>
 	<body>
 		<div class="judul">
@@ -52,7 +52,7 @@
 				</li>
 				<li>
 				<a href="../../?statusLogin=1">
-						<i class="fa fa-car">
+						<i class="fa fa-close">
 						
 						</i>
 					</a>

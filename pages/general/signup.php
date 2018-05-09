@@ -11,8 +11,14 @@ session_start();
 		<!-- OPTIONAL -->
 		<link rel="stylesheet" href="../../lib/w3.css">
 		<link rel="stylesheet" href="../../lib/w3-theme-riverside.css">
-		<link rel="stylesheet" href="../../style/signUpStyle.css">
+		<link rel="stylesheet" href="../../style/signUpStyle1.css">
 		<script type="text/javascript" src="../../js/signUpScript.js"></script>
+		<style>
+			@font-face {
+    		font-family: fonts;
+    		src: url(../fonts/CollegiateInsideFLF.ttf);
+		}
+		</style>
 	</head>
 	<body>
 		<!-- CONTENT -->
@@ -47,9 +53,15 @@ session_start();
 		  */
 			if(isset($_GET['status_SignUp'])){
 				if($_GET['status_SignUp'] == 1){
-					echo " <br><br><h1 style='color : red;'> password not same!</h1>";
+					echo " <br><br><h1 style='color : white; font-family: fonts;
+					text-shadow:-3px -3px 2px rgb(27, 15, 15);background:rgba(255, 0, 0, 0.5);
+					padding: 1px; border:1px solid transparent; box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 12px 40px 0 rgba(0, 0, 0, 0.19);
+					border-radius: 10px;'> password not match !</h1>";
 				}else if($_GET['status_SignUp'] == 2){
-					echo " <br><br><h1 style='color : red;'> username already used!</h1>";
+					echo " <br><br><h1 style='color : white; font-family: fonts;
+					text-shadow:-3px -3px 2px rgb(27, 15, 15);background:rgba(255, 0, 0, 0.5);
+					padding: 1px; border:1px solid transparent; box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 12px 40px 0 rgba(0, 0, 0, 0.19);
+					border-radius: 10px;'> username already used !</h1>";
 				}
 			}
 

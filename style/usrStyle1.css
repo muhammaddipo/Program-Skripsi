@@ -196,8 +196,9 @@ p{
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 12px 40px 0 rgba(0, 0, 0, 0.19);
     font-family: Input;
     font-weight: bold;
-    margin: 20px;
-    margin-top: 5vw;
+    margin-top: 13px;
+    margin-right: 20px;
+    float: right;
 }
 .midHeader button:hover{
     background-color: mediumseagreen;
@@ -266,6 +267,12 @@ p{
     width: 100%;
     font-family: Input;
     font-size: 20px;
+}
+
+.midContent table td{
+    padding-left: 10px;
+    padding-bottom: 5px;
+    background: rgba(255, 255, 255, 0.582);
 }
 
 .midContent table tr{
