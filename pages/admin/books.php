@@ -85,8 +85,6 @@
 			<div class="midBar">
 				<div class="midHeader">
 					<h2>Book List</h2>
-					
-					<button id='myBtn'>ADD BOOK</button>
 					<form action="books.php" method='post'>
 						<input type="text" name="type" >
 						<label for="">by</label>
@@ -96,8 +94,9 @@
 							<option value="publication_Year">Year</option>
 							<option value="publisher">Publisher</option>
 						</select>
-						<input type="submit" name="search" value="Search">
+						<input type="submit" name="search" value="SEARCH">
 					</form>
+					<button id='myBtn'>ADD BOOK</button>
 					
 				</div>
 				<div class="midContent">

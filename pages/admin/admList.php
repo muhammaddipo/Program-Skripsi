@@ -85,8 +85,6 @@
 			<div class="midBar">
 				<div class="midHeader">
 					<h2>Administrator List</h2>
-					
-					<button id='myBtn'>ADD ADMIN</button>
 					<form action="admList.php" method='post'>
 						<input type="text" name="type" >
 						<label for="">by</label>
@@ -98,6 +96,7 @@
 						</select>
 						<input type="submit" name="search" value="Search">
 					</form>
+					<button id='myBtn'>ADD ADMIN</button>
 					
 				</div>
 				<div class="midContent">

@@ -99,7 +99,9 @@
 				</ul>
 			</div>
 			<div class="midBar">
+				<div class="midHeader">
 				<h1>Today's News</h1>
+				</div>
 				<div class="midContent">
 				<h2>Trump election: Priebus and Bannon given key roles</h2>
 					<p>

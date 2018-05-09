@@ -73,7 +73,6 @@
 			<div class="midBar">
 				<div class="midHeader">
 					<h1>About Us</h1>
-
 				</div>
 				<div class="midContent">
 

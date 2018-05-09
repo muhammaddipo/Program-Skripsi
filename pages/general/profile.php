@@ -99,7 +99,9 @@
 				</ul>
 			</div>
 			<div class="midBar">
+				<div class="midHeader">
 				<h1>Profile</h1>
+				</div>
 				<div class="midContent">
 			
 					

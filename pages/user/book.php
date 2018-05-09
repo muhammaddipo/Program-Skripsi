@@ -79,7 +79,6 @@
 						<a href="">	
 							Book List 
 						</a>
-				
 					</li>
 					<li><a href="">Borrowing History</a></li>
 					<li><a href="../general/journals.php">Download Journals</a></li>

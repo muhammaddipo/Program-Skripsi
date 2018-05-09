@@ -3,16 +3,22 @@
  session_start();
 
  if(isset($_POST['submit'])){
-     if($_POST['password'] != $_POST['confirm_Password']){
-         header("Location: ../pages/general/signUp.php?status_SignUp=1"); // 1 artinya password sama confirm ga sama 
-      }
+     
 
+
+     if($_POST['password'] != $_POST['confirm_Password']){
+        // echo "$_POST[password]  $_POST[confirm_Password]";
+        header("Location: ../pages/general/signUp.php?status_SignUp=1"); // 1 artinya password sama confirm ga sama 
+        exit();
+        }
+    
+    
       $checkUsr = "SELECT username FROM anggota WHERE username='$_POST[username]'";
       $hasil =   $mysqli->query($checkUsr);
 
       if($hasil->num_rows == 1){
          header("Location: ../pages/general/signUp.php?status_SignUp=2"); // 2 username sudah tersedia di database 
-            
+        exit();
       }
 
 

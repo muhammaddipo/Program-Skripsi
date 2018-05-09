@@ -40,6 +40,20 @@ session_start();
 		<div class="quote1">
 			<br><br>
 			<q>READING IS DREAMING WITH OPEN EYES</q>
+		<?php
+		  /*
+			di bawa dari sign up user 
+			kalo 1 artinya password dengan confirm password tidak sama 
+		  */
+			if(isset($_GET['status_SignUp'])){
+				if($_GET['status_SignUp'] == 1){
+					echo " <br><br><h1 style='color : red;'> password not same!</h1>";
+				}else if($_GET['status_SignUp'] == 2){
+					echo " <br><br><h1 style='color : red;'> username already used!</h1>";
+				}
+			}
+
+		?>
 		</div>
 		<br>
 		<div class="form">
@@ -79,20 +93,6 @@ session_start();
 			
 		</div>
 		<!-- <button id="myBtn">my Button</button> -->
-		<?php
-		  /*
-			di bawa dari sign up user 
-			kalo 1 artinya password dengan confirm password tidak sama 
-		  */
-			if(isset($_GET['status_SignUp'])){
-				if($_GET['status_SignUp'] == 1){
-					echo " <br><br><h1 style='color : maroon;'> password not same ! </h1>";
-				}else if($_GET['status_SignUp'] == 2){
-					echo " <br><br><h1 style='color : maroon;'> username already used ! </h1>";
-				}
-			}
-
-		?>
 		
 	</body>
 </html>
