@@ -155,6 +155,17 @@ p{
     padding: 0vh 1.2vw 0vh 1.2vw;
 }
 
+/* BAGIAN JOURNALS */
+.journal{
+    border : 1px solid black;
+    margin : 1vh 1vw;
+}
+
+.journal a{
+    text-decoration: none;
+}
+/*  */
+
 .midHeader h1{
     margin : 0;
     float : left;
@@ -168,6 +179,10 @@ p{
 .midHeader form{
     float:right;
     padding : 1vw 1vh;
+}
+.midHeader button{
+    float:right;
+    /* padding : 1vw 1vh; */
 }
 
 

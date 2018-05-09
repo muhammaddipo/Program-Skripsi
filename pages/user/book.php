@@ -31,7 +31,6 @@
 		</div>
 		<div class="navBar">
 			<p>You are login as <?php echo $_SESSION['user']->getUsername() ; ?></p>
-			<p><?php echo $sql;?></p>
 			<ul>
 				<li >
 					<a href="usr.php">
@@ -83,7 +82,7 @@
 				
 					</li>
 					<li><a href="">Borrowing History</a></li>
-					<li><a href="">Download Journals</a></li>
+					<li><a href="../general/journals.php">Download Journals</a></li>
 				</ul>
 			</div>
 			<div class="midBar">

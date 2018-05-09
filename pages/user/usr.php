@@ -67,7 +67,7 @@
 				<ul>
 					<li><a href="book.php">Book List</a></li>
 					<li><a href="">Borrowing History</a></li>
-					<li><a href="">Download Journals</a></li>
+					<li><a href="../general/journals.php">Download Journals</a></li>
 				</ul>
 			</div>
 			<div class="midBar">

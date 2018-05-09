@@ -22,12 +22,21 @@
 			<p>You are login as <?php echo $_SESSION['user']->getUsername() ; ?></p>
 			
 			<ul>
-				<li >
-					<a href="../user/usr.php">
-						<i class="fa fa-home" >
-
-						</i>
-					</a>
+				<li>
+					<!-- MENU HOME -->
+					<?php
+						if($_SESSION['user']->getRole() == 'user'){
+								echo "	<a href='../user/usr.php'>
+								<i class='fa fa-home' >
+								</i>
+							</a>";
+						}else{
+							echo "	<a href='../admin/adm.php'>
+								<i class='fa fa-home' >
+								</i>
+							</a>";
+						}
+					?>
 				</li>
 				<li id="active">
 					<a href="news.php" >
@@ -37,11 +46,21 @@
 					</a>
 				</li>
 				<li>
-					<a href="">
-						<i class="fa fa-envelope">
-						
-						</i>
-					</a>
+					<?php
+						if($_SESSION['user']->getRole()=='user'){
+							echo "<a href=''>
+										<i class='fa fa-envelope'>
+									
+										</i>
+								</a>";
+						}else{
+							echo "<a href=''>
+										<i class='fa fa-bell'>
+									
+										</i>
+									</a>";
+						}
+					?>
 				</li>
 				<li>
 					<a href="../general/profile.php">
@@ -65,9 +84,18 @@
 			<div class="leftBar">
 				<p>Menu</p>
 				<ul>
-					<li><a href="../user/book.php">Book List</a></li>
-					<li><a href="">Borrowing History</a></li>
-					<li><a href="">Download Journals</a></li>
+					<?php
+							if($_SESSION['user']->getRole()=='user'){
+								echo "<li><a href='../user/book.php'>Book List</a></li>
+									  <li><a href=''>Borrowing History</a></li>
+									  <li><a href=''>Download Journals</a></li>";
+							}else{
+								echo "<li><a href='../admin/books.php'>Book List</a></li>
+									  <li><a href='../admin/member.php'>Member List</a></li>
+									  <li><a href='../admin/admList.php'>Administrator List</a></li>
+									  <li><a href='journals.php'>Download Journals</a></li>";
+							}	
+					?>
 				</ul>
 			</div>
 			<div class="midBar">
