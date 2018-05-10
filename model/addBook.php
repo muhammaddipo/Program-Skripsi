@@ -19,7 +19,7 @@
       $newBookSql = "SELECT * FROM book WHERE code='$codeNew'";
       $resultNew = $mysqli->query($newBookSql);
 
-      if($resultNew && $resultNew ->num_rows > 0){
+      if($resultNew && $resultNew->num_rows > 0){
         $newRow = $resultNew->fetch_array();
         $idBookNew = $newRow['id_Book'];
 

@@ -12,35 +12,41 @@
 		<link rel="stylesheet" href="../../lib/w3-theme-riverside.css">
 		<link rel="stylesheet" href="../../lib/font-awesome.min.css">
 		<link rel="stylesheet" href="../../lib/font-awesome.css">
-		<link rel="stylesheet" href="../../style/usrStyle.css">
+		<link rel="stylesheet" href="../../style/usrStyle1.css">
 	</head>
 	<body>
-		<div class="judul">
+		<div class='judul'>
 			<h1>E-Library</h1>
 		</div>
-		<div class="navBar">
+
+		<div class='navBar'>
 			<p>You are login as <?php echo $_SESSION['user']->getUsername() ; ?></p>
-			
 			<ul>
 				<li>
 					<!-- MENU HOME -->
 					<?php
 						if($_SESSION['user']->getRole() == 'user'){
-								echo "	<a href='../user/usr.php'>
-								<i class='fa fa-home' >
+					?>
+							<a href='../user/usr.php'>
+								<i class='fa fa-home'>
+
 								</i>
-							</a>";
+							</a>
+					<?php
 						}else{
-							echo "	<a href='../admin/adm.php'>
-								<i class='fa fa-home' >
+					?>
+							<a href='../admin/adm.php'>
+								<i class='fa fa-home'>
+
 								</i>
-							</a>";
+							</a>
+					<?php
 						}
 					?>
 				</li>
-				<li id="active">
-					<a href="news.php" >
-						<i class="fa fa-newspaper-o">
+				<li id='active'>
+					<a href='news.php'>
+						<i class='fa fa-newspaper-o'>
 						
 						</i>
 					</a>
@@ -48,61 +54,68 @@
 				<li>
 					<?php
 						if($_SESSION['user']->getRole()=='user'){
-							echo "<a href=''>
-										<i class='fa fa-envelope'>
-									
-										</i>
-								</a>";
+					?>
+							<a href='mailto:someone@example.com?Subject=Hello%20again' target='_top'>
+								<i class='fa fa-envelope'>
+							
+								</i>
+							</a>
+					<?php
 						}else{
-							echo "<a href=''>
-										<i class='fa fa-bell'>
-									
-										</i>
-									</a>";
+					?>
+							<a href=''>
+								<i class='fa fa-bell'>
+							
+								</i>
+							</a>
+					<?php
 						}
 					?>
 				</li>
 				<li>
-					<a href="../general/profile.php">
-						<i class="fa fa-user">
+					<a href='../general/profile.php'>
+						<i class='fa fa-user'>
 						
 						</i>
 					</a>
 				</li>
 				<li>
-					<a href="../../?statusLogin=1">
-						<i class="fa fa-car">
+					<a href='../../?statusLogin=1'>
+						<i class='fa fa-close'>
 						
 						</i>
 					</a>
-				</li>
-				
+				</li>	
 			</ul>
 		</div>
 
-		<div class="mid">
-			<div class="leftBar">
+		<div class='mid'>
+			<div class='leftBar'>
 				<p>Menu</p>
 				<ul>
 					<?php
-							if($_SESSION['user']->getRole()=='user'){
-								echo "<li><a href='../user/book.php'>Book List</a></li>
-									  <li><a href=''>Borrowing History</a></li>
-									  <li><a href=''>Download Journals</a></li>";
-							}else{
-								echo "<li><a href='../admin/books.php'>Book List</a></li>
-									  <li><a href='../admin/member.php'>Member List</a></li>
-									  <li><a href='../admin/admList.php'>Administrator List</a></li>
-									  <li><a href='journals.php'>Download Journals</a></li>";
+						if($_SESSION['user']->getRole()=='user'){
+					?>
+							<li><a href='../user/book.php'>Book List</a></li>
+							<li><a href='../user/borrow.php'>Borrowing History</a></li>
+							<li><a href='journals.php'>Download Journals</a></li>
+					<?php
+						}else{
+					?>
+							<li><a href='../admin/books.php'>Book List</a></li>
+							<li><a href='../admin/member.php'>Member List</a></li>
+							<li><a href='../admin/admList.php'>Administrator List</a></li>
+							<li><a href='journals.php'>Download Journals</a></li>
+					<?php
 							}	
 					?>
 				</ul>
 			</div>
-			<div class="midBar">
-				<div class="midHeader">
-				<h1>Today's News</h1>
+			<div class='midBar'>
+				<div class='midHeader'>
+					<h1>Today's News</h1>
 				</div>
-				<div class="midContent">
+				<div class='midContent'>
 				<h2>Trump election: Priebus and Bannon given key roles</h2>
 					<p>
 						US President-elect Donald Trump has awarded key roles in his incoming team to a top Republican party official and a right-wing media chief.
@@ -112,13 +125,13 @@
 						Mr Bannon stepped aside as executive chairman of Breitbart - a combative conservative site with an
 						anti-establishment agenda - to act as Mr Trump's campaign chief.
 						Meanwhile, in the president-elect's first interview, with US broadcaster CBS, Mr Trump said:
-						<ul>
-							<li>He would deport or jail up to three million illegal migrants with criminal links</li>
-							<li>Future Supreme Court nominees would be "pro-life" - meaning they oppose abortion - and defend the 
-							constitutional right to bear arms</li>
-							<li>He will not seek to overturn the legalisation of same-sex marriage</li>
-							<li>He will forgo the president's $400,000 salary, taking $1 a year instead</li>
-							</ul>
+					<ul>
+						<li>He would deport or jail up to three million illegal migrants with criminal links</li>
+						<li>Future Supreme Court nominees would be "pro-life" - meaning they oppose abortion - and defend the 
+						constitutional right to bear arms</li>
+						<li>He will not seek to overturn the legalisation of same-sex marriage</li>
+						<li>He will forgo the president's $400,000 salary, taking $1 a year instead</li>
+					</ul>
 					</p>
 					<p>
 						In a statement released by his campaign, Mr Trump described Mr Priebus and Mr Bannon as "highly qualified 
@@ -127,10 +140,9 @@
 						He is close to House Speaker Paul Ryan, a fellow Wisconsinite who could be instrumental in steering the new 
 						administration's legislative agenda.
 					</p>
-				
 				</div>
 
-				<div class="midFooter">
+				<div class='midFooter'>
 					<p>&copy; 2018 Boundless-Learners,Hippow - eLibrary for Web Based Programming</p>
 				</div>
 			</div>
