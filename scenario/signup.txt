@@ -1,0 +1,7 @@
+Feature: Signup
+    Untuk menggunakan program
+    Pengguna harus memiliki akun
+
+    Scenario: Signup 
+        Given Pengguna ingin melakukan "signup"
+        When
