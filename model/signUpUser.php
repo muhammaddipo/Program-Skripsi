@@ -19,7 +19,7 @@ function signup($username,$password,$name,$email,$phone,$address){
         header("Location: ../pages/general/signUp.php?status_SignUp=1"); // 1 artinya password sama confirm ga sama 
         exit();
         }
-    
+
     
       $checkUsr = "SELECT username FROM anggota WHERE username='$_POST[username]'";
       $hasil =   $mysqli->query($checkUsr);

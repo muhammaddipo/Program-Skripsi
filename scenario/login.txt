@@ -1,0 +1,17 @@
+Feature: loginVer
+    Untuk menggunakan program
+    Pengguna harus login terlebih dahulu
+
+    Scenario: Login berhasil user
+        Given Pengguna belum "login"
+        When Pengguna menekan tombol "login"
+        And Pengguna mengisi "username" dengan "dipo"
+        And Pengguna mengisi "password" dengan "dipo"
+        Then Berhasil masuk ke halaman "usr"
+
+    Scenario: Login berhasil admin
+        Given Pengguna belum "login"
+        When Pengguna menekan tombol "login"
+        And Pengguna mengisi "username" dengan "dipo"
+        And Pengguna mengisi "password" dengan "dipo"
+        Then Berhasil masuk ke halaman "adm"

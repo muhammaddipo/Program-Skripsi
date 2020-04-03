@@ -1,7 +1,10 @@
-Feature: Signup
+Feature: signUpUser
     Untuk menggunakan program
     Pengguna harus memiliki akun
 
     Scenario: Signup 
-        Given Pengguna ingin melakukan "signup"
-        When
+        Given Pengguna belum login
+        When Pengguna menekan tombol "signup"
+        Pengguna mengisi kolom "username" dengan "dipo"
+        And Pengguna mengisi kolom "password" dengan "dipo"
+        Then Pengguna terdaftar pada tabel user
