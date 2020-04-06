@@ -1,4 +1,8 @@
 <?php
+if(isset($_POST['login'])){
+    login();
+}
+function login(){
   include 'db.php';
   include 'userClass.php';
   session_start();
@@ -30,6 +34,6 @@
     header("Location: ../pages/general/login.php?statusSalah=2");
     //   echo "wrong username";
    }
-
+}
 
 ?>  

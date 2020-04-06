@@ -20,7 +20,7 @@
 			<br>
 			<p>PASSWORD</p>
 			<input type='password' name='password' id=''>
-			<input type='submit' value='LOGIN'>
+			<input type='submit' name='login' value='LOGIN'>
 			<a href='../../index.php'>CANCEL</a>	
 		</form>
 		</div>
