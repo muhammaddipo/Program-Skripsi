@@ -6,14 +6,11 @@ if(isset($_POST['submit'])){
       $email = $_POST['email'];
       $phone = $_POST['phone'];
       $address = $_POST['address'];
+      
   signup($username,$password,$name,$email,$phone,$address);
 }
 function signup($username,$password,$name,$email,$phone,$address){
- include 'db.php';
- session_start();
-
- 
-     
+ include 'libraries.php';
      if($_POST['password'] != $_POST['confirm_Password']){
         // echo "$_POST[password]  $_POST[confirm_Password]";
         header("Location: ../pages/general/signUp.php?status_SignUp=1"); // 1 artinya password sama confirm ga sama 
@@ -28,10 +25,6 @@ function signup($username,$password,$name,$email,$phone,$address){
          header("Location: ../pages/general/signUp.php?status_SignUp=2"); // 2 username sudah tersedia di database 
         exit();
       }
-
-
-      
-
 
       $sql = "INSERT INTO anggota (username , password , name , email , phone , address , role) 
                 VALUES ('$username' ,  '$password' , '$name' , '$email' , '$phone' , '$address' ,'user')";

@@ -1,12 +1,12 @@
 <?php
+session_start();
 if(isset($_POST['login'])){
     login();
 }
 function login(){
-  include 'db.php';
+  include 'libraries.php';
   include 'userClass.php';
-  session_start();
- 
+  
    $usernameNow = $_POST['username'];
    $passwordNow = md5($_POST['password']);
 
