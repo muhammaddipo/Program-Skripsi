@@ -1,7 +1,6 @@
 <?php
 include '../../model/userClass.php';
 session_start();
-
 ?>
 <!DOCTYPE html>
 <html>
@@ -72,7 +71,6 @@ session_start();
 		<?php
 				}
 			}
-
 		?>
 		</div>
 
