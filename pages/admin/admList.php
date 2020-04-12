@@ -100,14 +100,10 @@
 				<div class='midContent'>
 					<!-- pop up messages when books added FROM addbook.php -->
 					<?php
-						if(isset($_GET['status_Add'])){
-							if($_GET['status_Add'] == 1){
+						if(isset($_GET['status_Add'])){		
+						if($_GET['status_Add'] == 2){
 					?>
-								<p style='color:green'>Administrator added , temporary password :<?php $_GET['passwordNew'] ?>. Please change it immediately. </p>";
-					<?php		
-						}else if($_GET['status_Add'] == 2){
-					?>
-							 	<p style='color:maroon'> Username not available,please try again </p>";
+							 	<p style='color:red'> Username not available,please try again </p>
 					<?php								
 							}
 						}
@@ -142,7 +138,8 @@
 						<span class='close'>&times;</span>
 							<h3>New Administrator</h3>
 							<form action='../../model/addAdmin.php' method='post'>
-								<input type='text' name='username' id='' placeholder='Username' required><br>								
+								<input type='text' name='username' id='' placeholder='Username' required><br>	
+								<input type='password' name='password' id='' placeholder='Password' required><br>							
 								<input type='text' name='name' id='' placeholder='Name' required><br>
 								<input type='text' name='email' id='' placeholder='Email' required><br>
 								<input type='number' name='phone' id='' placeholder='Phone Number' required><br>
