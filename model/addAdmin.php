@@ -1,9 +1,9 @@
 <?php
     include 'db.php';
 
-    function checkUsername(){
+    function checkUsername($username){
         global $mysqli;
-        $command = "SELECT username FROM anggota WHERE username='$_POST[username]'";
+        $command = "SELECT username FROM anggota WHERE username='$username'";
 
         $hasil = $mysqli->query($command);
         if($hasil && $hasil->num_rows > 0){
@@ -20,7 +20,7 @@
         $phoneNew = $_POST['phone'];
         $addressNew = $_POST['address'];
 
-        if(!checkUsername()){
+        if(!checkUsername($usernameNew)){
             header("Location: ../pages/admin/admList.php?status_Add=2"); //STATUS ADD 2= username udah ada 
         }
         // -------------------------------GENERATE PASSWORD 

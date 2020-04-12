@@ -1,6 +1,4 @@
 <?php
-    include 'db.php';
-
   if(isset($_POST['add'])){
       $codeNew = $_POST['code'];
       $titleNew = $_POST['title'];
@@ -9,12 +7,16 @@
       $publisherNew = $_POST['publisher'];
       $themeNew = $_POST['theme'];
 
+      insertBook($codeNew , $titleNew ,$authorNew ,$publication_YearNew,$publisherNew,$themeNew);
+  }
     //   echo "$codeNew , $titleNew , $authorNew , $publication_YearNew , $publisherNew , $themeNew";
     //  untuk insert ke buku
-      $insertBookSql = "INSERT INTO book (code , title , author , publication_Year , publisher ) VALUES ('$codeNew' , '$titleNew' ,
-                        '$authorNew' , '$publication_YearNew' , '$publisherNew')";
-      $resultInsert = $mysqli->query($insertBookSql);
-      
+    function insertBook($codeNew , $titleNew ,$authorNew ,$publication_YearNew,$publisherNew,$themeNew){
+      include 'libraries.php';
+        $insertBookSql = "INSERT INTO book (code , title , author , publication_Year , publisher ) VALUES ('$codeNew' , '$titleNew' ,
+                          '$authorNew' , '$publication_YearNew' , '$publisherNew')";
+        $resultInsert = $mysqli->query($insertBookSql);
+    
       //untuk ambil id book dari yang baru dimasukan
       $newBookSql = "SELECT * FROM book WHERE code='$codeNew'";
       $resultNew = $mysqli->query($newBookSql);
@@ -42,11 +44,5 @@
           }
         }
       }
-
-
-     
-
-  }
-
-
+    }
 ?>

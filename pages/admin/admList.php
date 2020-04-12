@@ -103,7 +103,7 @@
 						if(isset($_GET['status_Add'])){
 							if($_GET['status_Add'] == 1){
 					?>
-								<p style='color:green'>Administrator added , temporary password :<?php $_GET[passwordNew] ?>. Please change it immediately. </p>";
+								<p style='color:green'>Administrator added , temporary password :<?php $_GET['passwordNew'] ?>. Please change it immediately. </p>";
 					<?php		
 						}else if($_GET['status_Add'] == 2){
 					?>

@@ -18,7 +18,7 @@ function signup($username,$password,$name,$email,$phone,$address){
       //   }
     
       // $checkUsr = "SELECT username FROM anggota WHERE username='$_POST[username]'";
-      // $hasil =   $mysqli->query($checkUsr);
+      // $hasil =   $mysqli->query($checkUsr); 
 
       // if($hasil->num_rows == 1){
       //    header("Location: ../pages/general/signUp.php?status_SignUp=2"); // 2 username sudah tersedia di database 

@@ -1,7 +1,6 @@
 <?php
 	include '../../model/userClass.php';
-	include '../../model/db.php';
-	session_start();
+	include '../../model/libraries.php';
 
 	$sql = "SELECT * FROM booklist ";
 	
@@ -10,8 +9,6 @@
 			$sql.= "WHERE $_POST[field] LIKE '%$_POST[type]%'";
 		}
 	}
-
-	
 ?>
 <!DOCTYPE html>
 <html>
