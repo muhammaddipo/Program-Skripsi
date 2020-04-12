@@ -3,6 +3,13 @@ require ('C:\xampp\htdocs\eLibrary\model\signUpUser.php');
 require ('C:\xampp\htdocs\eLibrary\model\addBook.php');
 require ('C:\xampp\htdocs\eLibrary\model\addAdmin.php');
 class UnitTesting extends \PHPUnit_Framework_TestCase{
+    public function testCheckUsername(){
+        require ('C:\xampp\htdocs\eLibrary\model\db.php');
+        $actual_result=checkUsername('hasrul');
+        $expected_result=false;
+        $this->assertEquals($actual_result,$expected_result);
+    }
+    
     public function testSignUp(){
         require ('C:\xampp\htdocs\eLibrary\model\db.php');
         signup('dipo',md5('dipo'),'dipo','dipo@gmail.com','dipo','081320903964','salendro');
@@ -23,10 +30,5 @@ class UnitTesting extends \PHPUnit_Framework_TestCase{
         session_destroy();
     }
 
-    public function testCheckUsername(){
-        require ('C:\xampp\htdocs\eLibrary\model\db.php');
-        $actual_result=checkUsername('dipo');
-        $expected_result=false;
-        $this->assertEquals($actual_result,$expected_result);
-    }
+    
 }
