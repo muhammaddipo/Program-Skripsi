@@ -7,23 +7,25 @@ if(isset($_POST['submit'])){
       $phone = $_POST['phone'];
       $address = $_POST['address'];
       
-  signup($username,$password,$name,$email,$phone,$address);
+  $result=signup($username,$password,$name,$email,$phone,$address);
+  header($result->getURL());
 }
 function signup($username,$password,$name,$email,$phone,$address){
   include 'libraries.php';
-      // if($_POST['password'] != $_POST['confirm_Password']){
-      //   // echo "$_POST[password]  $_POST[confirm_Password]";
-      //   header("Location: ../pages/general/signUp.php?status_SignUp=1"); // 1 artinya password sama confirm ga sama 
-      //   exit();
-      //   }
+      if($password != $_POST['confirm_Password']){
+        // echo "$_POST[password]  $_POST[confirm_Password]";
+        // header("Location: ../pages/general/signUp.php?status_SignUp=1"); // 1 artinya password sama confirm ga sama 
+        // exit();
+        return new Redirect("Location: ../pages/general/signUp.php?status_SignUp=1");
+        }
     
-      // $checkUsr = "SELECT username FROM anggota WHERE username='$_POST[username]'";
-      // $hasil =   $mysqli->query($checkUsr); 
+      $checkUsr = "SELECT username FROM anggota WHERE username='$_POST[username]'";
+      $hasil =   $mysqli->query($checkUsr); 
 
-      // if($hasil->num_rows == 1){
-      //    header("Location: ../pages/general/signUp.php?status_SignUp=2"); // 2 username sudah tersedia di database 
-      //   exit();
-      // }
+      if($hasil->num_rows == 1){
+         header("Location: ../pages/general/signUp.php?status_SignUp=2"); // 2 username sudah tersedia di database 
+        exit();
+      }
 
       $sql = "INSERT INTO anggota (username , password , name , email , phone , address , role) 
                 VALUES ('$username' ,  '$password' , '$name' , '$email' , '$phone' , '$address' ,'user')";
