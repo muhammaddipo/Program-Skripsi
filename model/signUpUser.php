@@ -1,25 +1,28 @@
 <?php
+include 'headerPlacing.php';
 if(isset($_POST['submit'])){
       $username = $_POST['username'];
       $password = md5($_POST['password']);
+      $confirm_password=md5($_POST['confirm_Password']);
       $name = $_POST['name'];
       $email = $_POST['email'];
       $phone = $_POST['phone'];
       $address = $_POST['address'];
-      
-  $result=signup($username,$password,$name,$email,$phone,$address);
-  header($result->getURL());
+
+      $result=signup($username,$password,$confirm_password,$name,$email,$phone,$address);
+      header($result->getURL());
 }
-function signup($username,$password,$name,$email,$phone,$address){
+function signup($username,$password,$confirm_password,$name,$email,$phone,$address){
   include 'libraries.php';
-      if($password != $_POST['confirm_Password']){
+      if($password != $confirm_password){
         // echo "$_POST[password]  $_POST[confirm_Password]";
         // header("Location: ../pages/general/signUp.php?status_SignUp=1"); // 1 artinya password sama confirm ga sama 
         // exit();
         return new Redirect("Location: ../pages/general/signUp.php?status_SignUp=1");
+        exit();
         }
     
-      $checkUsr = "SELECT username FROM anggota WHERE username='$_POST[username]'";
+      $checkUsr = "SELECT username FROM anggota WHERE username='$username'";
       $hasil =   $mysqli->query($checkUsr); 
 
       if($hasil->num_rows == 1){
