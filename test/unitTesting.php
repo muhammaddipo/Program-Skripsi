@@ -12,7 +12,6 @@ class UnitTesting extends \PHPUnit_Framework_TestCase{
     }
     
  
-
     public function testAddBook(){
         require ('C:\xampp\htdocs\eLibrary\model\db.php');
         insertBook('A1','Petualang','Dipo','2000','DipoInc','2');

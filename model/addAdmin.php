@@ -1,10 +1,8 @@
 <?php
-    include 'db.php';
-
+    include 'headerPlacing.php';
     function checkUsername($username){
-        global $mysqli;
+        include 'db.php';
         $command = "SELECT username FROM anggota WHERE username='$username'";
-
         $hasil = $mysqli->query($command);
         if($hasil && $hasil->num_rows > 0){
             return false;
@@ -21,13 +19,23 @@
         $phoneNew = $_POST['phone'];
         $addressNew = $_POST['address'];
 
-        addAdmin($usernameNew,$passwordNew,$nameNew,$emailNew,$phoneNew,$addressNew);
+        $result=addAdmin($usernameNew,$passwordNew,$nameNew,$emailNew,$phoneNew,$addressNew);
+        header($result->getURL());
     }
 
     function addAdmin($usernameNew,$passwordNew,$nameNew,$emailNew,$phoneNew,$addressNew){
-        include 'db.php';
+        include 'libraries.php';
+            // $checkUsr = "SELECT username FROM anggota WHERE username='$username'";
+            // $hasil =   $mysqli->query($checkUsr); 
+            // $res=false;
+            // if($hasil && $hasil->num_rows > 0){
+            //     $res=false;
+            // }else{
+            //     $res=true;
+            //     }
             if(!checkUsername($usernameNew)){
-                header("Location: ../pages/admin/admList.php?status_Add=2"); //STATUS ADD 2= username udah ada 
+                return new Redirect("Location: ../pages/admin/admList.php?status_Add=2"); #username sudah dipakai
+                exit();
             }
             // -------------------------------GENERATE PASSWORD 
             // $characters = '0a1q2Ep4hbK56F7ec8L9idUMoxyNgzXAnBCwrfDYTGsvkHItJOhPQujmRlvwsz';

@@ -26,7 +26,7 @@ function signup($username,$password,$confirm_password,$name,$email,$phone,$addre
       $hasil =   $mysqli->query($checkUsr); 
 
       if($hasil->num_rows == 1){
-         header("Location: ../pages/general/signUp.php?status_SignUp=2"); // 2 username sudah tersedia di database 
+        return new Redirect("Location: ../pages/general/signUp.php?status_SignUp=2");// 2 username sudah tersedia di database 
         exit();
       }
 
