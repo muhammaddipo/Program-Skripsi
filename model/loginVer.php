@@ -1,37 +1,47 @@
 <?php
-session_start();
+include 'userClass.php';
+include 'headerPlacing.php';
 if(isset($_POST['login'])){
-    login();
+    include 'libraries.php';
+    $usernameNow = $_POST['username'];
+    $passwordNow = md5($_POST['password']);
+    $_SESSION['user'] = new User($row['username'] , $row['name'] , $row['id_Anggota'] , $row['role']);
+    $result=login($usernameNow,$passwordNow);
+    header($result->getURL());
 }
-function login(){
-  include 'libraries.php';
-  include 'userClass.php';
-  
-   $usernameNow = $_POST['username'];
-   $passwordNow = md5($_POST['password']);
-
-   $sql = "SELECT * FROM anggota WHERE username='$usernameNow'";
-
-   $result = $mysqli->query($sql);
-   if($result && $result->num_rows > 0){
-       $row = $result->fetch_array();
+function login($usernameNow,$passwordNow){
+    include 'db.php';
+    $sql = "SELECT * FROM anggota WHERE username='$usernameNow'";
+    $result = $mysqli->query($sql);
+    $row = $result->fetch_array();
+    if($result && $result->num_rows > 0){
+       //$row = $result->fetch_array();
         if($passwordNow == $row['password']){
             // $_SESSION['user'] = new User($row['name'] , $row['username']);
             // echo $_SESSION['user']->getUsername();
-            $_SESSION['user'] = new User($row['username'] , $row['name'] , $row['id_Anggota'] , $row['role']);
+            //$_SESSION['user'] = new User($row['username'] , $row['name'] , $row['id_Anggota'] , $row['role']);
             
-            if($row['role'] == 'user'){
-                header("Location: ../pages/user/usr.php");
+            if($row['role']  == 'user'){
+                //header("Location: ../pages/user/usr.php");
+                return new Redirect("Location: ../pages/user/usr.php");
+                exit();
             }else{
-                header("Location: ../pages/admin/adm.php");
+                //header("Location: ../pages/admin/adm.php");
+                return new Redirect("Location: ../pages/admin/adm.php");
+                exit();
             }
         }else{
-            header("Location: ../pages/general/login.php?statusSalah=1");
-            // echo "wrong password";
+            //header("Location: ../pages/general/login.php?statusSalah=1");
+            return new Redirect("Location: ../pages/general/login.php?statusSalah=1");
+            exit();
+             //echo "wrong password";
+             
         }
 
    }else{
-    header("Location: ../pages/general/login.php?statusSalah=2");
+    //header("Location: ../pages/general/login.php?statusSalah=2");
+    return new Redirect("Location: ../pages/general/login.php?statusSalah=2");
+    exit();
     //   echo "wrong username";
    }
 }
