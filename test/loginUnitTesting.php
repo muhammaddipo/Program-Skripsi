@@ -2,7 +2,7 @@
 require ('C:\xampp\htdocs\eLibrary\model\loginVer.php');
     class UnitTesting extends \PHPUnit_Framework_TestCase{
         #unit testing untuk login user
-        /** @test */
+        
         public function testLogin1(){
             require ('C:\xampp\htdocs\eLibrary\model\db.php');
             $actual_result=login('dipo',md5('dipo'));
@@ -11,7 +11,6 @@ require ('C:\xampp\htdocs\eLibrary\model\loginVer.php');
         }
 
         #unit testing untuk login admin
-        /** @test */
         public function testLogin2(){
             require ('C:\xampp\htdocs\eLibrary\model\db.php');
             $actual_result=login('hasrul',md5('hasrul'));
@@ -20,21 +19,21 @@ require ('C:\xampp\htdocs\eLibrary\model\loginVer.php');
         }
 
         #unit testing untuk login yang password nya salah
-        /** @test */
+
         public function testLogin3(){
             require ('C:\xampp\htdocs\eLibrary\model\db.php');
             $actual_result=login('dipo',md5('dipa'));
             $expected_result="Location: ../pages/general/login.php?statusSalah=1";
-            $this->assertEquals($actual_result[0]->getUrl(),$expected_result);
+            $this->assertEquals($actual_result->getUrl(),$expected_result);
         }
 
-        #unit testing untuk login yang password nya salah
-        /** @test */
+        #unit testing untuk login yang username nya salah
+
         public function testLogin4(){
             require ('C:\xampp\htdocs\eLibrary\model\db.php');
             $actual_result=login('dipa',md5('dipo'));
             $expected_result="Location: ../pages/general/login.php?statusSalah=2";
-            $this->assertEquals($actual_result[0]->getUrl(),$expected_result);
+            $this->assertEquals($actual_result->getUrl(),$expected_result);
         }
     }
 
