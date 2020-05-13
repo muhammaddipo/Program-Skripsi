@@ -1,19 +1,21 @@
 <?php
 include 'userClass.php';
 include 'headerPlacing.php';
+include 'libraries.php';
 if(isset($_POST['login'])){
-    include 'libraries.php';
+    
     $usernameNow = $_POST['username'];
     $passwordNow = md5($_POST['password']);
-    $_SESSION['user'] = new User($row['username'] , $row['name'] , $row['id_Anggota'] , $row['role']);
     $result=login($usernameNow,$passwordNow);
-    header($result->getURL());
+    header($result[0]->getURL());
+    $_SESSION['user'] = $result[1];
 }
 function login($usernameNow,$passwordNow){
     include 'db.php';
     $sql = "SELECT * FROM anggota WHERE username='$usernameNow'";
     $result = $mysqli->query($sql);
     $row = $result->fetch_array();
+
     if($result && $result->num_rows > 0){
        //$row = $result->fetch_array();
         if($passwordNow == $row['password']){
@@ -23,7 +25,7 @@ function login($usernameNow,$passwordNow){
             
             if($row['role']  == 'user'){
                 //header("Location: ../pages/user/usr.php");
-                return new Redirect("Location: ../pages/user/usr.php");
+                return [new Redirect("Location: ../pages/user/usr.php"),new User($row['username'] , $row['name'] , $row['id_Anggota'] , $row['role'])];
                 exit();
             }else{
                 //header("Location: ../pages/admin/adm.php");

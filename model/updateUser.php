@@ -1,6 +1,7 @@
 <?php
     include 'userClass.php';
     include 'libraries.php';
+    include 'headerPlacing.php';
     // BIKIN CONVENTION SENDIRI
     //
 
@@ -14,28 +15,34 @@
         $phone=$_POST['phone'];
         $address=$_POST['address'];
 
-        updateUser($user,$password,$confirm_password,$phone,$address);
+        $result=updateUser($user,$password,$confirm_password,$phone,$address);
+        header($result->getURL());
     }
     function updateUser($user,$password,$confirm_password,$phone,$address){
-        include 'libraries.php';
+        include 'db.php';
         $count = 0 ;
         $sql = "UPDATE anggota SET ";
         $pass = false; //buat cek ternyata mau update 
         //cek password
         if($password){
-                
                 if(!$confirm_password){
-                    header("Location: ../pages/general/profile.php?statusUpdate=1"); // 1: dua duanya ga diisi
+                    //header("Location: ../pages/general/profile.php?statusUpdate=1");
+                    return new Redirect("Location: ../pages/general/profile.php?statusUpdate=2");
+                    exit(); // 1: dua duanya ga diisi
                 }
         }
         //cek confirm password
         if($confirm_password){
-            if(!$_POST['password']){
-                header("Location: ../pages/general/profile.php?statusUpdate=1"); //1: salah satu dari password dan confirm password ga diisi 
+            if(!$password){
+                //header("Location: ../pages/general/profile.php?statusUpdate=1"); //1: salah satu dari password dan confirm password ga diisi 
+                return new Redirect("Location: ../pages/general/profile.php?statusUpdate=2");
+                exit();
             }
             
             if($confirm_password != $password){
-                    header("Location: ../pages/general/profile.php?statusUpdate=2"); //2: password sama confirmed password ga sama               
+                    header("Location: ../pages/general/profile.php?statusUpdate=2"); //2: password sama confirmed password ga sama       
+                    return new Redirect("Location: ../pages/general/profile.php?statusUpdate=1");
+                    exit();        
             }else{
                     $sql.= "password=md5('$password') ";
                     $pass = true;
@@ -60,24 +67,26 @@
                 $sql.= ", address= '$address' ";
                 $count++;
             }else{
-            $sql.= " address= '$address' ";
+            $sql.= "address= '$address' ";
             $count++;
                 
             }
         }
 
-        $sql.="WHERE id_Anggota=".$user;
-        echo "$sql";
+        $sql.="WHERE id_Anggota=$user";
         $result = $mysqli->query($sql);
         if($result){
             //statusUpdate = 3 artinya berhasil update selain update password
             //statusUpdate = 4 artinya berhasil update password juga 
             if($pass){
-                header("Location: ../pages/general/profile.php?statusUpdate=4");
+                //header("Location: ../pages/general/profile.php?statusUpdate=4");
+                return new Redirect("Location: ../pages/general/profile.php?statusUpdate=4");
+                exit();
                 
             }else{
-                header("Location: ../pages/general/profile.php?statusUpdate=3");
-
+                //header("Location: ../pages/general/profile.php?statusUpdate=3");
+                return new Redirect("Location: ../pages/general/profile.php?statusUpdate=3");
+                exit();
             }
         }
     }

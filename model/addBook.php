@@ -12,7 +12,7 @@
     //   echo "$codeNew , $titleNew , $authorNew , $publication_YearNew , $publisherNew , $themeNew";
     //  untuk insert ke buku
     function insertBook($codeNew , $titleNew ,$authorNew ,$publication_YearNew,$publisherNew,$themeNew){
-      include 'libraries.php';
+      include 'db.php';
         $insertBookSql = "INSERT INTO book (code , title , author , publication_Year , publisher ) VALUES ('$codeNew' , '$titleNew' ,
                           '$authorNew' , '$publication_YearNew' , '$publisherNew')";
         $resultInsert = $mysqli->query($insertBookSql);

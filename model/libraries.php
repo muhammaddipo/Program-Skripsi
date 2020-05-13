@@ -1,6 +1,6 @@
 <?php
 
-    session_start();
+session_start();
 
 $mysqli = new mysqli("localhost" , "root" , "" , "elibrary");
 if($mysqli->connect_errno){
@@ -10,4 +10,4 @@ if($mysqli->connect_errno){
 
     // echo "Successfully connected";
 }
-
+?>
