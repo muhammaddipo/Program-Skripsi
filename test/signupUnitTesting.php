@@ -5,7 +5,7 @@ class UnitTesting extends \PHPUnit_Framework_TestCase{
     #unit testing signup
     public function testSignUp1(){
         require ('C:\xampp\htdocs\eLibrary\model\db.php');
-        signup('dipo',md5('dipo'),md5('dipo'),'dipo','dipo@gmail.com','081320903964','salendro timur');
+        signup('dipo',md5('dipo'),md5('dipo'),'dipo','dipo@gmail.com','081320903964','salendro');
         $sql="SELECT Count(id_Anggota) FROM anggota where username='dipo'";
         $actual_result=$mysqli->query($sql);
         $expected_result=1;

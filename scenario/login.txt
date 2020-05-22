@@ -7,11 +7,25 @@ Feature: loginVer
         When Pengguna menekan tombol "login"
         And Pengguna mengisi "username" dengan "dipo"
         And Pengguna mengisi "password" dengan "dipo"
-        Then Berhasil masuk ke halaman "usr"
+        Then Berhasil masuk ke halaman "Location: ../pages/user/usr.php"
 
     Scenario: Login berhasil admin
         Given Pengguna belum "login"
         When Pengguna menekan tombol "login"
+        And Pengguna mengisi "username" dengan "hasrul"
+        And Pengguna mengisi "password" dengan "hasrul"
+        Then Berhasil masuk ke halaman "Location: ../pages/user/adm.php"
+
+    Scenario: Login gagal password salah
+        Given Pengguna belum "login"
+        When Pengguna menekan tombol "login"
         And Pengguna mengisi "username" dengan "dipo"
+        And Pengguna mengisi "password" dengan "dipa"
+        Then Berhasil masuk ke halaman "Location: ../pages/general/login.php?statusSalah=1"
+
+    Scenario: Login gagal username salah
+        Given Pengguna belum "login"
+        When Pengguna menekan tombol "login"
+        And Pengguna mengisi "username" dengan "dipa"
         And Pengguna mengisi "password" dengan "dipo"
-        Then Berhasil masuk ke halaman "adm"
+        Then Berhasil masuk ke halaman "Location: ../pages/general/login.php?statusSalah=2"

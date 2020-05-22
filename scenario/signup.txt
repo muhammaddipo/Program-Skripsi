@@ -1,10 +1,39 @@
 Feature: signUpUser
     Untuk menggunakan program
-    Pengguna harus memiliki akun
+    Pengguna harus memiliki akun untuk login masuk
 
-    Scenario: Signup 
-        Given Pengguna belum login
+    Scenario: Signup berhasil
+        Given Pengguna belum signup
         When Pengguna menekan tombol "signup"
-        Pengguna mengisi kolom "username" dengan "dipo"
+        And Pengguna mengisi kolom "username" dengan "dipo"
         And Pengguna mengisi kolom "password" dengan "dipo"
-        Then Pengguna terdaftar pada tabel user
+        And Pengguna mengisi kolom "confirm password" dengan "dipo"
+        And Pengguna mengisi kolom "email" dengan "dipo@gmail.com"
+        And Pengguna mengisi kolom "name" dengan "dipo"
+        And Pengguna mengisi kolom "phone" dengan "081320903964"
+        And Pengguna mengisi kolom "address" dengan "salendro"
+        Then Pengguna terdaftar pada tabel "anggota"
+
+    Scenario: Signup gagal password dan confirm password beda
+        Given Pengguna belum signup
+        When Pengguna menekan tombol "signup"
+        And Pengguna mengisi kolom "username" dengan "dipo"
+        And Pengguna mengisi kolom "password" dengan "dipo"
+        And Pengguna mengisi kolom "confirm password" dengan "dipa"
+        And Pengguna mengisi kolom "email" dengan "dipo@gmail.com"
+        And Pengguna mengisi kolom "name" dengan "dipo"
+        And Pengguna mengisi kolom "phone" dengan "081320903964"
+        And Pengguna mengisi kolom "address" dengan "salendro"
+        Then Berhasil masuk ke halaman "Location: ../pages/general/signUp.php?status_SignUp=1"
+
+    Scenario: Signup gagal username sudah terpakai
+        Given Pengguna belum signup
+        When Pengguna menekan tombol "signup"
+        And Pengguna mengisi kolom "username" dengan "arru"
+        And Pengguna mengisi kolom "password" dengan "dipo"
+        And Pengguna mengisi kolom "confirm password" dengan "dipa"
+        And Pengguna mengisi kolom "email" dengan "dipo@gmail.com"
+        And Pengguna mengisi kolom "name" dengan "dipo"
+        And Pengguna mengisi kolom "phone" dengan "081320903964"
+        And Pengguna mengisi kolom "address" dengan "salendro"
+        Then Berhasil masuk ke halaman "Location: ../pages/general/signUp.php?status_SignUp=2"

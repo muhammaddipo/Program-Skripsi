@@ -33,7 +33,7 @@ require ('C:\xampp\htdocs\eLibrary\model\updateUser.php');
             $expected_result="Location: ../pages/general/profile.php?statusUpdate=1";
             $this->assertEquals($actual_result->getUrl(),$expected_result);
         }
-        #unit testing jika semua kolom di isi
+        #unit testing berhasil semua kolom di isi
         /** @test */
         public function TestUpdateUser5(){
             require ('C:\xampp\htdocs\eLibrary\model\db.php');

@@ -1,8 +1,8 @@
 <?php
 require ('C:\xampp\htdocs\eLibrary\model\loginVer.php');
     class UnitTesting extends \PHPUnit_Framework_TestCase{
+
         #unit testing untuk login user
-        
         public function testLogin1(){
             require ('C:\xampp\htdocs\eLibrary\model\db.php');
             $actual_result=login('dipo',md5('dipo'));
@@ -19,7 +19,6 @@ require ('C:\xampp\htdocs\eLibrary\model\loginVer.php');
         }
 
         #unit testing untuk login yang password nya salah
-
         public function testLogin3(){
             require ('C:\xampp\htdocs\eLibrary\model\db.php');
             $actual_result=login('dipo',md5('dipa'));
@@ -28,7 +27,6 @@ require ('C:\xampp\htdocs\eLibrary\model\loginVer.php');
         }
 
         #unit testing untuk login yang username nya salah
-
         public function testLogin4(){
             require ('C:\xampp\htdocs\eLibrary\model\db.php');
             $actual_result=login('dipa',md5('dipo'));
