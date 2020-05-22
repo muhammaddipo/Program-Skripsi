@@ -1,7 +1,7 @@
 Feature: addBook
     Untuk menambah buku pada catalog
 
-    Scenario: Add book berhasil
+    Scenario: Add_book berhasil
         Given Pengguna sudah login sebagai "admin"
         When Pengguna menekan tombol "Book List"
         And Pengguna mengisi kolom "code" dengan "A1"

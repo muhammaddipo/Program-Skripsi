@@ -31,24 +31,24 @@ function login($usernameNow,$passwordNow){
             
             if($row['role']  == 'user'){
                 //header("Location: ../pages/user/usr.php");
-                return [new Redirect("Location: ../pages/user/usr.php"),new User($row['username'] , $row['name'] , $row['id_Anggota'] , $row['role'])];
+                return [new Redirect("Location:../pages/user/usr.php"),new User($row['username'] , $row['name'] , $row['id_Anggota'] , $row['role'])];
                 exit();
             }else{
                 //header("Location: ../pages/admin/adm.php");
                 
-                return [new Redirect("Location: ../pages/admin/adm.php"),new User($row['username'] , $row['name'] , $row['id_Anggota'] , $row['role'])];
+                return [new Redirect("Location:../pages/admin/adm.php"),new User($row['username'] , $row['name'] , $row['id_Anggota'] , $row['role'])];
                 exit();
             }
         }else{
             //header("Location: ../pages/general/login.php?statusSalah=1");
-            return new Redirect("Location: ../pages/general/login.php?statusSalah=1");
+            return new Redirect("Location:../pages/general/login.php?statusSalah=1");
              //echo "wrong password";
              exit();
         }
 
    }else{
     //header("Location: ../pages/general/login.php?statusSalah=2");
-    return new Redirect("Location: ../pages/general/login.php?statusSalah=2");
+    return new Redirect("Location:../pages/general/login.php?statusSalah=2");
     exit();
     //   echo "wrong username";
    }

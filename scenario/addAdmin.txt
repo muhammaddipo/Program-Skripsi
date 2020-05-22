@@ -1,7 +1,7 @@
 Feature: addAdmin
     Untuk menambah admin
 
-    Scenario: Add admin berhasil
+    Scenario: Add_admin berhasil
         Given Pengguna sudah "login" sebagai "admin"
         When Pengguna menekan tombol "Administrator List"
         And Pengguna menekan tombol "ADD ADMIN"
@@ -13,7 +13,7 @@ Feature: addAdmin
         And Pengguna mengisi kolom "address" dengan "bandung"
         Then Pengguna terdaftar pada tabel "anggota"
     
-    Scenario: Add admin gagal username sudah terpakai
+    Scenario: Add_admin gagal username sudah terpakai
         Given Pengguna sudah "login" sebagai "admin"
         When Pengguna menekan tombol "Administrator List"
         And Pengguna menekan tombol "ADD ADMIN"

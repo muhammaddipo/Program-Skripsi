@@ -2,7 +2,7 @@ Feature: updateUser
     Untuk mengupdate jika user
     Ingin mengganti info akun
 
-    Scenario: Update user berhasil tanpa mengganti password
+    Scenario: Update_user berhasil tanpa mengganti password
         Given Pengguna sudah "login" 
         When Pengguna menekan tombol "profile"
         And Pengguna meneka tombol "udpate user info"
@@ -13,7 +13,7 @@ Feature: updateUser
         And Pengguna mengisi kolom "address" dengan ""
         Then Berhasil masuk ke halaman "Location: ../pages/general/profile.php?statusUpdate=3"
 
-    Scenario: Update user gagal password di isi tapi confirm password tidak
+    Scenario: Update_user gagal password di isi tapi confirm password tidak
         Given Pengguna sudah "login" 
         When Pengguna menekan tombol "profile"
         And Pengguna meneka tombol "udpate user info"
@@ -24,7 +24,7 @@ Feature: updateUser
         And Pengguna mengisi kolom "address" dengan ""
         Then Berhasil masuk ke halaman "Location: ../pages/general/profile.php?statusUpdate=2"
 
-    Scenario: Update user gagal password tidak di isi tapi confirm password di isi
+    Scenario: Update_user gagal password tidak di isi tapi confirm password di isi
         Given Pengguna sudah "login" 
         When Pengguna menekan tombol "profile"
         And Pengguna meneka tombol "udpate user info"
@@ -35,7 +35,7 @@ Feature: updateUser
         And Pengguna mengisi kolom "address" dengan ""
         Then Berhasil masuk ke halaman "Location: ../pages/general/profile.php?statusUpdate=2"
 
-    Scenario: Update user gagal password dan confirm password berbeda
+    Scenario: Update_user gagal password dan confirm password berbeda
         Given Pengguna sudah "login" 
         When Pengguna menekan tombol "profile"
         And Pengguna meneka tombol "udpate user info"
@@ -46,7 +46,7 @@ Feature: updateUser
         And Pengguna mengisi kolom "address" dengan ""
         Then Berhasil masuk ke halaman "Location: ../pages/general/profile.php?statusUpdate=1"
 
-    Scenario: Update user berhasil semua kolom di isi
+    Scenario: Update_user berhasil semua kolom di isi
         Given Pengguna sudah "login" 
         When Pengguna menekan tombol "profile"
         And Pengguna meneka tombol "udpate user info"
