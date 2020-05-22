@@ -14,7 +14,7 @@ Feature: loginVer
         When Pengguna menekan tombol login
         And Pengguna mengisi username dengan hasrul
         And Pengguna mengisi password dengan hasrul
-        Then Berhasil masuk ke halaman "Location:../pages/user/adm.php"
+        Then Berhasil masuk ke halaman "Location:../pages/admin/adm.php"
 
     Scenario: Login gagal Password salah
         Given Pengguna belum Login

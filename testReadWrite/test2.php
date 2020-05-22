@@ -44,25 +44,25 @@ if ($fileRead) {
             }
             if($words[$i]=="halaman"){
                 $page=$words[$i+1];
-                fwrite($fileWrite,$method." ".$status);
-                if($method=="login" || $status="berhasil"){
+                if($method=="login" && $status="berhasil"){
 
                     fwrite($fileWrite,"\t\$actual_result=".$method."('".$username."',md5('".$password."'));\n");
                     fwrite($fileWrite,"\t\$expected_result=".$page.";\n");
                     fwrite($fileWrite,"\t\$this->assertEquals(\$actual_result[0]->getUrl(),\$expected_result);\n}");
                 }
-                if($method=="login" || $status="gagal"){
+                if($method=="login" && $status=="gagal"){
 
                     fwrite($fileWrite,"\t\$actual_result=".$method."('".$username."',md5('".$password."'));\n");
                     fwrite($fileWrite,"\t\$expected_result=".$page.";\n");
-                    fwrite($fileWrite,"\t\$this->assertEquals(\$actual_result->getUrl(),\$expected_result);");
+                    fwrite($fileWrite,"\t\$this->assertEquals(\$actual_result->getUrl(),\$expected_result);\n}");
                 }                
             }
             
         } 
     }
-
+    fwrite($fileWrite,"}");
     fclose($fileRead);
+    fclose($fileWrite);
 } else {
     // error opening the file.
 } 
