@@ -2,25 +2,24 @@ Feature: addAdmin
     Untuk menambah admin
 
     Scenario: Add_admin berhasil
-        Given Pengguna sudah "login" sebagai "admin"
-        When Pengguna menekan tombol "Administrator List"
-        And Pengguna menekan tombol "ADD ADMIN"
-        And Pengguna mengisi kolom "username" dengan "nida"
-        And Pengguna mengisi kolom "password" dengan "nida"
-        And Pengguna mengisi kolom "name" dengan "nida"
-        And Pengguna mengisi kolom "email" dengan "nida@gmail.com"
-        And Pengguna mengisi kolom "phone" dengan "080808080"
-        And Pengguna mengisi kolom "address" dengan "bandung"
-        Then Pengguna terdaftar pada tabel "anggota"
+        Given Pengguna sudah login sebagai admin
+        When Pengguna menekan tombol addAdmin
+        And Pengguna mengisi kolom username dengan nida
+        And Pengguna mengisi kolom password dengan nida
+        And Pengguna mengisi kolom name dengan nida
+        And Pengguna mengisi kolom email dengan nida@gmail.com
+        And Pengguna mengisi kolom phone dengan 080808080
+        And Pengguna mengisi kolom address dengan bandung
+        Then Pengguna terdaftar pada tabel anggota
     
-    Scenario: Add_admin gagal username sudah terpakai
-        Given Pengguna sudah "login" sebagai "admin"
-        When Pengguna menekan tombol "Administrator List"
-        And Pengguna menekan tombol "ADD ADMIN"
-        And Pengguna mengisi kolom "username" dengan "hasrul"
-        And Pengguna mengisi kolom "password" dengan "dipo"
-        And Pengguna mengisi kolom "name" dengan "dipo"
-        And Pengguna mengisi kolom "email" dengan "dipo@gmail.com"
-        And Pengguna mengisi kolom "phone" dengan "081320903964"
-        And Pengguna mengisi kolom "address" dengan "salendro"
-        Then Berhasil masuk ke halaman "Location: ../pages/admin/admList.php?status_Add=2"
+    Scenario: Add_admin gagal Username sudah terpakai
+        Given Pengguna sudah login sebagai admin
+        When Pengguna menekan tombol addAdmin
+        And Pengguna mengisi kolom username dengan hasrul
+        And Pengguna mengisi kolom password dengan dipo
+        And Pengguna mengisi kolom name dengan dipo
+        And Pengguna mengisi kolom email dengan dipo@gmail.com
+        And Pengguna mengisi kolom phone dengan 081320903964
+        And Pengguna mengisi kolom address dengan salendro
+        Then Berhasil masuk ke halaman "Location:../pages/admin/admList.php?status_Add=2"
+    

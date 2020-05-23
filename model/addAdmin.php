@@ -34,7 +34,7 @@
             //     $res=true;
             //     }
             if(!checkUsername($usernameNew)){
-                return new Redirect("Location: ../pages/admin/admList.php?status_Add=2"); #username sudah dipakai
+                return new Redirect("Location:../pages/admin/admList.php?status_Add=2"); #username sudah dipakai
                 exit();
             }
             // -------------------------------GENERATE PASSWORD 
@@ -54,7 +54,7 @@
 
             $result = $mysqli->query($sql);
             if($result){
-                return new Redirect("Location: ../pages/admin/admList.php?status_Add=1"); //STATUS ADD 1= admin berhasil di register  
+                return new Redirect("Location:../pages/admin/admList.php?status_Add=1"); //STATUS ADD 1= admin berhasil di register  
                 exit();          
             }
         

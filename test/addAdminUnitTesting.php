@@ -24,12 +24,12 @@ require ('C:\xampp\htdocs\eLibrary\model\addAdmin.php');
             $expected_result="Location: ../pages/admin/admList.php?status_Add=2";
             $this->assertEquals($actual_result->getUrl(),$expected_result);
         }
-        public function testAddAdmin3(){
-            require ('C:\xampp\htdocs\eLibrary\model\db.php');
-            $actual_result=checkUsername('hasrul');
-            $expected_result=false;
-            $this->assertEquals($actual_result,$expected_result);
-        }
+        // public function testAddAdmin3(){
+        //     require ('C:\xampp\htdocs\eLibrary\model\db.php');
+        //     $actual_result=checkUsername('hasrul');
+        //     $expected_result=false;
+        //     $this->assertEquals($actual_result,$expected_result);
+        // }
     }
 
 ?>

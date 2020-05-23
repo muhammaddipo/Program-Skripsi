@@ -1,10 +1,11 @@
 <?php
-$fileRead = fopen("C:\\xampp\\htdocs\\eLibrary\\scenario\\signup.txt",'r');
-$fileWrite = fopen(__DIR__ . "/signupUnitTesting.php",'w');
+$fileRead = fopen("C:\\xampp\\htdocs\\eLibrary\\scenario\\addAdmin.txt",'r');
+$fileWrite = fopen(__DIR__ . "/addAdminUnitTesting.php",'w');
 fwrite($fileWrite,"<?php\n");
 $banyakTest=1;
 $feature="";
 $method="";
+$table="";
 $username="";
 $password="";
 $page="";
@@ -46,7 +47,7 @@ if ($fileRead) {
             if($words[$i]=="password" && $words[$i-1]!="confirm"){
                 $password=$words[$i+2];
             }
-            if($method=="signup"){
+            if($method=="signup" || $method=="addAdmin"){
                 if($words[$i]=="confirm" && $words[$i+1]=="password"){
                     $confirm_password=$words[$i+3];
                     
@@ -97,7 +98,26 @@ if ($fileRead) {
                                 fwrite($fileWrite,"\t\$expected_result=".$page.";\n");
                                 fwrite($fileWrite,"\t\$this->assertEquals(\$actual_result->getUrl(),\$expected_result);\n}");
                             }
+                        }
+                        if($method=="addAdmin"){
+                            if($status=="gagal"){
+                                fwrite($fileWrite,"\t\$actual_result=".$method."('".$username."',md5('".$password."'),'".$name."','".$email."','".$phone."','".$address."');\n");
+                                fwrite($fileWrite,"\t\$expected_result=".$page.";\n");
+                                fwrite($fileWrite,"\t\$this->assertEquals(\$actual_result->getUrl(),\$expected_result);\n}");
+                            }
                         }          
+                    }
+                    if($words[$j]=="tabel"){
+                        $table=$words[$j+1];
+                        if($method=="addAdmin"){
+                            if($status=="berhasil"){
+                                fwrite($fileWrite,"\t".$method."('".$username."',md5('".$password."'),'".$name."','".$email."','".$phone."','".$address."');\n");
+                                fwrite($fileWrite,"\t\$sql=\"SELECT Count(id_".$table.") FROM ". $table." where username='".$username."'\";\n");
+                                fwrite($fileWrite,"\t\$actual_result=\$mysqli->query(\$sql);\n");
+                                fwrite($fileWrite,"\t\$expected_result=1;\n");
+                                fwrite($fileWrite,"\t\$this->assertEquals(\$actual_result->num_rows,\$expected_result);\n}");
+                            }
+                        }
                     }
                 }
             }
