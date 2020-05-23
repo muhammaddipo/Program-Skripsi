@@ -1,5 +1,7 @@
 <?php
 include 'headerPlacing.php';
+include 'userClass.php';
+include 'libraries.php';
 if(isset($_POST['submit'])){
       $username = $_POST['username'];
       $password = md5($_POST['password']);
@@ -10,15 +12,21 @@ if(isset($_POST['submit'])){
       $address = $_POST['address'];
 
       $result=signup($username,$password,$confirm_password,$name,$email,$phone,$address);
-      header($result->getURL());
+      if(is_array($result)){
+        header($result[0]->getURL());
+        $_SESSION['user'] = $result[1];
+      }
+      else if(!is_array($result)){
+          header($result->getURL());
+      }
 }
 function signup($username,$password,$confirm_password,$name,$email,$phone,$address){
-  include 'libraries.php';
+  include 'db.php';
       if($password != $confirm_password){
         // echo "$_POST[password]  $_POST[confirm_Password]";
         // header("Location: ../pages/general/signUp.php?status_SignUp=1"); // 1 artinya password sama confirm ga sama 
         // exit();
-        return new Redirect("Location: ../pages/general/signUp.php?status_SignUp=1");
+        return new Redirect("Location:../pages/general/signUp.php?status_SignUp=1");
         exit();
         }
     
@@ -26,7 +34,7 @@ function signup($username,$password,$confirm_password,$name,$email,$phone,$addre
       $hasil =   $mysqli->query($checkUsr); 
 
       if($hasil->num_rows == 1){
-        return new Redirect("Location: ../pages/general/signUp.php?status_SignUp=2");// 2 username sudah tersedia di database 
+        return new Redirect("Location:../pages/general/signUp.php?status_SignUp=2");// 2 username sudah tersedia di database 
         exit();
       }
 
@@ -44,10 +52,11 @@ function signup($username,$password,$confirm_password,$name,$email,$phone,$addre
                 $id = $row2['id_Anggota'];
             }
 
-            include 'userClass.php';
-            $_SESSION['user'] = new User($name , $username , $id , 'user');
+            
+            //$_SESSION['user'] = new User($name , $username , $id , 'user');
             // echo $_SESSION['user']->getUsername()." <br> ".$_SESSION['user']->getName()." <br>". $_SESSION['user']->getId();
-            header("Location: ../pages/general/signUp.php?status_SignUp=3"); // 3 artinya berhasil sign up bakal munculin modal 
+            return [new Redirect("Location:../pages/general/signUp.php?status_SignUp=3"), new User($name , $username , $id , 'user')]; // 3 artinya berhasil sign up bakal munculin modal 
+            exit();
       }
   }
 ?>

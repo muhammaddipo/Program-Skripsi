@@ -3,37 +3,37 @@ Feature: signUpUser
     Pengguna harus memiliki akun untuk login masuk
 
     Scenario: Signup berhasil
-        Given Pengguna belum signup
-        When Pengguna menekan tombol "signup"
-        And Pengguna mengisi kolom "username" dengan "dipo"
-        And Pengguna mengisi kolom "password" dengan "dipo"
-        And Pengguna mengisi kolom "confirm password" dengan "dipo"
-        And Pengguna mengisi kolom "email" dengan "dipo@gmail.com"
-        And Pengguna mengisi kolom "name" dengan "dipo"
-        And Pengguna mengisi kolom "phone" dengan "081320903964"
-        And Pengguna mengisi kolom "address" dengan "salendro"
-        Then Pengguna terdaftar pada tabel "anggota"
+        Given Pengguna belum Signup
+        When Pengguna menekan tombol signup
+        And Pengguna mengisi kolom username dengan dipo
+        And Pengguna mengisi kolom password dengan dipo
+        And Pengguna mengisi kolom confirm password dengan dipo
+        And Pengguna mengisi kolom email dengan dipo@gmail.com
+        And Pengguna mengisi kolom name dengan dipo
+        And Pengguna mengisi kolom phone dengan 081320903964
+        And Pengguna mengisi kolom address dengan salendro
+        Then Berhasil masuk ke halaman "Location:../pages/general/signUp.php?status_SignUp=3"
 
-    Scenario: Signup gagal password dan confirm password beda
-        Given Pengguna belum signup
-        When Pengguna menekan tombol "signup"
-        And Pengguna mengisi kolom "username" dengan "dipo"
-        And Pengguna mengisi kolom "password" dengan "dipo"
-        And Pengguna mengisi kolom "confirm password" dengan "dipa"
-        And Pengguna mengisi kolom "email" dengan "dipo@gmail.com"
-        And Pengguna mengisi kolom "name" dengan "dipo"
-        And Pengguna mengisi kolom "phone" dengan "081320903964"
-        And Pengguna mengisi kolom "address" dengan "salendro"
-        Then Berhasil masuk ke halaman "Location: ../pages/general/signUp.php?status_SignUp=1"
+    Scenario: Signup gagal Password dan Confirm Password beda
+        Given Pengguna belum Signup
+        When Pengguna menekan tombol signup
+        And Pengguna mengisi kolom username dengan dipo
+        And Pengguna mengisi kolom password dengan dipo
+        And Pengguna mengisi kolom confirm password dengan dipa
+        And Pengguna mengisi kolom email dengan dipo@gmail.com
+        And Pengguna mengisi kolom name dengan dipo
+        And Pengguna mengisi kolom phone dengan 081320903964
+        And Pengguna mengisi kolom address dengan salendro
+        Then Berhasil masuk ke halaman "Location:../pages/general/signUp.php?status_SignUp=1"
 
-    Scenario: Signup gagal username sudah terpakai
-        Given Pengguna belum signup
-        When Pengguna menekan tombol "signup"
-        And Pengguna mengisi kolom "username" dengan "arru"
-        And Pengguna mengisi kolom "password" dengan "dipo"
-        And Pengguna mengisi kolom "confirm password" dengan "dipa"
-        And Pengguna mengisi kolom "email" dengan "dipo@gmail.com"
-        And Pengguna mengisi kolom "name" dengan "dipo"
-        And Pengguna mengisi kolom "phone" dengan "081320903964"
-        And Pengguna mengisi kolom "address" dengan "salendro"
-        Then Berhasil masuk ke halaman "Location: ../pages/general/signUp.php?status_SignUp=2"
+    Scenario: Signup gagal Username sudah terpakai
+        Given Pengguna belum Signup
+        When Pengguna menekan tombol signup
+        And Pengguna mengisi kolom username dengan arru
+        And Pengguna mengisi kolom password dengan dipo
+        And Pengguna mengisi kolom confirm password dengan dipo
+        And Pengguna mengisi kolom email dengan dipo@gmail.com
+        And Pengguna mengisi kolom name dengan dipo
+        And Pengguna mengisi kolom phone dengan 081320903964
+        And Pengguna mengisi kolom address dengan salendro
+        Then Berhasil masuk ke halaman "Location:../pages/general/signUp.php?status_SignUp=2"

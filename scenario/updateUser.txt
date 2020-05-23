@@ -3,56 +3,51 @@ Feature: updateUser
     Ingin mengganti info akun
 
     Scenario: Update_user berhasil tanpa mengganti password
-        Given Pengguna sudah "login" 
-        When Pengguna menekan tombol "profile"
-        And Pengguna meneka tombol "udpate user info"
-        And Pengguna mengisi kolom "user" dengan "56"
-        And Pengguna mengisi kolom "password" dengan ""
-        And Pengguna mengisi kolom "confirm password" dengan ""
-        And Pengguna mengisi kolom "phone" dengan "3"
-        And Pengguna mengisi kolom "address" dengan ""
+        Given Pengguna sudah login 
+        When Pengguna menekan tombol updateUser
+        And Pengguna mengisi kolom user dengan 56
+        And Pengguna mengisi kolom password dengan 
+        And Pengguna mengisi kolom confirm password dengan 
+        And Pengguna mengisi kolom phone dengan 3
+        And Pengguna mengisi kolom address dengan 
         Then Berhasil masuk ke halaman "Location: ../pages/general/profile.php?statusUpdate=3"
 
     Scenario: Update_user gagal password di isi tapi confirm password tidak
-        Given Pengguna sudah "login" 
-        When Pengguna menekan tombol "profile"
-        And Pengguna meneka tombol "udpate user info"
-        And Pengguna mengisi kolom "user" dengan "56"
-        And Pengguna mengisi kolom "password" dengan "dipo"
-        And Pengguna mengisi kolom "confirm password" dengan ""
-        And Pengguna mengisi kolom "phone" dengan ""
-        And Pengguna mengisi kolom "address" dengan ""
+        Given Pengguna sudah login 
+        When Pengguna menekan tombol updateUser
+        And Pengguna mengisi kolom user dengan 56
+        And Pengguna mengisi kolom password dengan dipo
+        And Pengguna mengisi kolom confirm password dengan 
+        And Pengguna mengisi kolom phone dengan 
+        And Pengguna mengisi kolom address dengan 
         Then Berhasil masuk ke halaman "Location: ../pages/general/profile.php?statusUpdate=2"
 
     Scenario: Update_user gagal password tidak di isi tapi confirm password di isi
-        Given Pengguna sudah "login" 
-        When Pengguna menekan tombol "profile"
-        And Pengguna meneka tombol "udpate user info"
-        And Pengguna mengisi kolom "user" dengan "56"
-        And Pengguna mengisi kolom "password" dengan ""
-        And Pengguna mengisi kolom "confirm password" dengan "dipo"
-        And Pengguna mengisi kolom "phone" dengan ""
-        And Pengguna mengisi kolom "address" dengan ""
+        Given Pengguna sudah login 
+        When Pengguna menekan tombol updateUser
+        And Pengguna mengisi kolom user dengan 56
+        And Pengguna mengisi kolom password dengan 
+        And Pengguna mengisi kolom confirm password dengan dipo
+        And Pengguna mengisi kolom phone dengan 
+        And Pengguna mengisi kolom address dengan 
         Then Berhasil masuk ke halaman "Location: ../pages/general/profile.php?statusUpdate=2"
 
     Scenario: Update_user gagal password dan confirm password berbeda
-        Given Pengguna sudah "login" 
-        When Pengguna menekan tombol "profile"
-        And Pengguna meneka tombol "udpate user info"
-        And Pengguna mengisi kolom "user" dengan "56"
-        And Pengguna mengisi kolom "password" dengan "dipa"
-        And Pengguna mengisi kolom "confirm password" dengan "dipo"
-        And Pengguna mengisi kolom "phone" dengan ""
-        And Pengguna mengisi kolom "address" dengan ""
+        Given Pengguna sudah login 
+        When Pengguna menekan tombol updateUser
+        And Pengguna mengisi kolom user dengan 56
+        And Pengguna mengisi kolom password dengan dipa
+        And Pengguna mengisi kolom confirm password dengan dipo
+        And Pengguna mengisi kolom phone dengan 
+        And Pengguna mengisi kolom address dengan 
         Then Berhasil masuk ke halaman "Location: ../pages/general/profile.php?statusUpdate=1"
 
     Scenario: Update_user berhasil semua kolom di isi
-        Given Pengguna sudah "login" 
-        When Pengguna menekan tombol "profile"
-        And Pengguna meneka tombol "udpate user info"
-        And Pengguna mengisi kolom "user" dengan "56"
-        And Pengguna mengisi kolom "password" dengan "dipo"
-        And Pengguna mengisi kolom "confirm password" dengan "dipo"
-        And Pengguna mengisi kolom "phone" dengan "1"
-        And Pengguna mengisi kolom "address" dengan "salendro timur"
+        Given Pengguna sudah login 
+        When Pengguna menekan tombol updateUser
+        And Pengguna mengisi kolom user dengan 56
+        And Pengguna mengisi kolom password dengan dipo
+        And Pengguna mengisi kolom confirm password dengan dipo
+        And Pengguna mengisi kolom phone dengan 1
+        And Pengguna mengisi kolom address dengan salendro timur
         Then Berhasil masuk ke halaman "Location: ../pages/general/profile.php?statusUpdate=4"

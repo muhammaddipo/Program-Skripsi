@@ -24,7 +24,7 @@
     }
 
     function addAdmin($usernameNew,$passwordNew,$nameNew,$emailNew,$phoneNew,$addressNew){
-        include 'libraries.php';
+        include 'db.php';
             // $checkUsr = "SELECT username FROM anggota WHERE username='$username'";
             // $hasil =   $mysqli->query($checkUsr); 
             // $res=false;
@@ -54,7 +54,8 @@
 
             $result = $mysqli->query($sql);
             if($result){
-                header("Location: ../pages/admin/admList.php?status_Add=1"); //STATUS ADD 1= admin berhasil di register            
+                return new Redirect("Location: ../pages/admin/admList.php?status_Add=1"); //STATUS ADD 1= admin berhasil di register  
+                exit();          
             }
         
     }

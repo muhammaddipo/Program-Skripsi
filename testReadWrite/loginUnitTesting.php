@@ -28,4 +28,5 @@ public function unittest4(){
 	$actual_result=login('dipa',md5('dipo'));
 	$expected_result="Location:../pages/general/login.php?statusSalah=2";
 	$this->assertEquals($actual_result->getUrl(),$expected_result);
-}}
+}
+}
