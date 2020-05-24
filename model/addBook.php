@@ -7,11 +7,11 @@
       $publisherNew = $_POST['publisher'];
       $themeNew = $_POST['theme'];
 
-      insertBook($codeNew , $titleNew ,$authorNew ,$publication_YearNew,$publisherNew,$themeNew);
+      addBook($codeNew , $titleNew ,$authorNew ,$publication_YearNew,$publisherNew,$themeNew);
   }
     //   echo "$codeNew , $titleNew , $authorNew , $publication_YearNew , $publisherNew , $themeNew";
     //  untuk insert ke buku
-    function insertBook($codeNew , $titleNew ,$authorNew ,$publication_YearNew,$publisherNew,$themeNew){
+    function addBook($codeNew , $titleNew ,$authorNew ,$publication_YearNew,$publisherNew,$themeNew){
       include 'db.php';
         $insertBookSql = "INSERT INTO book (code , title , author , publication_Year , publisher ) VALUES ('$codeNew' , '$titleNew' ,
                           '$authorNew' , '$publication_YearNew' , '$publisherNew')";

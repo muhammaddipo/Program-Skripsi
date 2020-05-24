@@ -1,6 +1,6 @@
 <?php
-$fileRead = fopen("C:\\xampp\\htdocs\\eLibrary\\scenario\\updateUser.txt",'r');
-$fileWrite = fopen(__DIR__ . "/updateUserUnitTesting.php",'w');
+$fileRead = fopen("C:\\xampp\\htdocs\\eLibrary\\scenario\\addBook.txt",'r');
+$fileWrite = fopen(__DIR__ . "/addBookUnitTesting.php",'w');
 fwrite($fileWrite,"<?php\n");
 $banyakTest=1;
 $feature="";
@@ -16,6 +16,12 @@ $name="";
 $phone="";
 $address="";
 $user="";
+$code="";
+$title="";
+$author="";
+$publication_year="";
+$publisher="";
+$theme="";
 if ($fileRead) {
     while (($line = fgets($fileRead)) !== false) {
         $words = preg_split('/\s+/',$line,-1,PREG_SPLIT_NO_EMPTY);
@@ -89,6 +95,26 @@ if ($fileRead) {
                     $user=$words[$i+2];
                 }
             }
+            if($method=="addBook"){
+                if($words[$i]=="code"){
+                    $code=$words[$i+2];
+                }
+                if($words[$i]=="title"){
+                    $title=$words[$i+2];
+                }
+                if($words[$i]=="author"){
+                    $author=$words[$i+2];
+                }
+                if($words[$i]=="publication" && $words[$i+1]=="year"){
+                    $publication_year=$words[$i+3];
+                }
+                if($words[$i]=="publisher"){
+                    $publisher=$words[$i+2];
+                }
+                if($words[$i]=="theme"){
+                    $theme=$words[$i+2];
+                }
+            }
             if($words[$i]=="Then"){
                 for($j=0;$j<count($words);$j++){
                     if($words[$j]=="halaman"){
@@ -149,6 +175,13 @@ if ($fileRead) {
                                 fwrite($fileWrite,"\t\$expected_result=1;\n");
                                 fwrite($fileWrite,"\t\$this->assertEquals(\$actual_result->num_rows,\$expected_result);\n}");
                             }
+                        }
+                        if($method=="addBook"){
+                            fwrite($fileWrite,"\t".$method."('".$code."','".$title."','".$author."','".$publication_year."','".$publisher."','".$theme."');\n");
+                                fwrite($fileWrite,"\t\$sql=\"SELECT Count(id_".$table.") FROM ". $table." where code='".$code."'\";\n");
+                                fwrite($fileWrite,"\t\$actual_result=\$mysqli->query(\$sql);\n");
+                                fwrite($fileWrite,"\t\$expected_result=1;\n");
+                                fwrite($fileWrite,"\t\$this->assertEquals(\$actual_result->num_rows,\$expected_result);\n}");
                         }
                     }
                 }

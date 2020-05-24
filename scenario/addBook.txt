@@ -2,12 +2,12 @@ Feature: addBook
     Untuk menambah buku pada catalog
 
     Scenario: Add_book berhasil
-        Given Pengguna sudah login sebagai "admin"
-        When Pengguna menekan tombol "Book List"
-        And Pengguna mengisi kolom "code" dengan "A1"
-        And Pengguna mengisi kolom "title" dengan "Pelangi"
-        And Pengguna mengisi kolom "author" dengan "Dipo"
-        And Pengguna mengisi kolom "publication year" dengan "2000"
-        And Pengguna mengisi kolom "publisher" dengan "DipoInc"
-        And Pengguna mengisi kolom "theme" dengan "2"
-        Then Buku terdaftar pada tabel "book"
+        Given Pengguna sudah login sebagai admin
+        When Pengguna menekan tombol addBook
+        And Pengguna mengisi kolom code dengan A1
+        And Pengguna mengisi kolom title dengan Pelangi
+        And Pengguna mengisi kolom author dengan Dipo
+        And Pengguna mengisi kolom publication year dengan 2000
+        And Pengguna mengisi kolom publisher dengan DipoInc
+        And Pengguna mengisi kolom theme dengan 2
+        Then Buku terdaftar pada tabel book
