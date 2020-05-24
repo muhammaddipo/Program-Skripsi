@@ -6,7 +6,7 @@ require ('C:\xampp\htdocs\eLibrary\model\updateUser.php');
         public function TestUpdateUser1(){
             require ('C:\xampp\htdocs\eLibrary\model\db.php');
             $actual_result=updateUser(56,'','','3','');
-            $expected_result="Location: ../pages/general/profile.php?statusUpdate=3";
+            $expected_result="Location:../pages/general/profile.php?statusUpdate=3";
             $this->assertEquals($actual_result->getUrl(),$expected_result);
         }
         #unit testing jika password di isi tapi confirm password tidak
@@ -14,7 +14,7 @@ require ('C:\xampp\htdocs\eLibrary\model\updateUser.php');
         public function TestUpdateUser2(){
             require ('C:\xampp\htdocs\eLibrary\model\db.php');
             $actual_result=updateUser(56,'dipo','','','');
-            $expected_result="Location: ../pages/general/profile.php?statusUpdate=2";
+            $expected_result="Location:../pages/general/profile.php?statusUpdate=2";
             $this->assertEquals($actual_result->getUrl(),$expected_result);
         }
         #unit testing jika password tidak di isi tapi confirm password iya
@@ -22,7 +22,7 @@ require ('C:\xampp\htdocs\eLibrary\model\updateUser.php');
         public function TestUpdateUser3(){
             require ('C:\xampp\htdocs\eLibrary\model\db.php');
             $actual_result=updateUser(56,'','dipo','','');
-            $expected_result="Location: ../pages/general/profile.php?statusUpdate=2";
+            $expected_result="Location:../pages/general/profile.php?statusUpdate=2";
             $this->assertEquals($actual_result->getUrl(),$expected_result);
         }
         #unit testing jika password dan confirm pasword beda
@@ -30,7 +30,7 @@ require ('C:\xampp\htdocs\eLibrary\model\updateUser.php');
         public function TestUpdateUser4(){
             require ('C:\xampp\htdocs\eLibrary\model\db.php');
             $actual_result=updateUser(56,'dipa','dipo','','');
-            $expected_result="Location: ../pages/general/profile.php?statusUpdate=1";
+            $expected_result="Location:../pages/general/profile.php?statusUpdate=1";
             $this->assertEquals($actual_result->getUrl(),$expected_result);
         }
         #unit testing berhasil semua kolom di isi
@@ -38,7 +38,7 @@ require ('C:\xampp\htdocs\eLibrary\model\updateUser.php');
         public function TestUpdateUser5(){
             require ('C:\xampp\htdocs\eLibrary\model\db.php');
             $actual_result=updateUser(56,'dipo','dipo','1','salendro timur');
-            $expected_result="Location: ../pages/general/profile.php?statusUpdate=4";
+            $expected_result="Location:../pages/general/profile.php?statusUpdate=4";
             $this->assertEquals($actual_result->getUrl(),$expected_result);
         }
     }

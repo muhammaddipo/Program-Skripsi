@@ -1,6 +1,6 @@
 <?php
-$fileRead = fopen("C:\\xampp\\htdocs\\eLibrary\\scenario\\addAdmin.txt",'r');
-$fileWrite = fopen(__DIR__ . "/addAdminUnitTesting.php",'w');
+$fileRead = fopen("C:\\xampp\\htdocs\\eLibrary\\scenario\\updateUser.txt",'r');
+$fileWrite = fopen(__DIR__ . "/updateUserUnitTesting.php",'w');
 fwrite($fileWrite,"<?php\n");
 $banyakTest=1;
 $feature="";
@@ -15,6 +15,7 @@ $email="";
 $name="";
 $phone="";
 $address="";
+$user="";
 if ($fileRead) {
     while (($line = fgets($fileRead)) !== false) {
         $words = preg_split('/\s+/',$line,-1,PREG_SPLIT_NO_EMPTY);
@@ -43,30 +44,49 @@ if ($fileRead) {
             }
             if($words[$i]=="username"){
                 $username=$words[$i+2];
+                if($username=="kosong"){
+                    $username="";
+                }
             }
             if($words[$i]=="password" && $words[$i-1]!="confirm"){
                 $password=$words[$i+2];
+                if($password=="kosong"){
+                    $password="";
+                }
             }
-            if($method=="signup" || $method=="addAdmin"){
+            if($method=="signup" || $method=="addAdmin" || $method=="updateUser"){
                 if($words[$i]=="confirm" && $words[$i+1]=="password"){
-                    $confirm_password=$words[$i+3];
-                    
+                    $confirm_password=$words[$i+3];    
+                    if($confirm_password=="kosong"){
+                        $confirm_password="";
+                    }
                 }
                 if($words[$i]=="email"){
                     $email=$words[$i+2];
-                    
+                    if($email=="kosong"){
+                        $email="";
+                    }
                 }
                 if($words[$i]=="name"){
                     $name=$words[$i+2];
-                    
+                    if($name=="kosong"){
+                        $name="";
+                    }
                 }
                 if($words[$i]=="phone"){
                     $phone=$words[$i+2];
-                    
+                    if($phone=="kosong"){
+                        $phone="";
+                    }
                 }
                 if($words[$i]=="address"){
                     $address=$words[$i+2];
-                    
+                    if($address=="kosong"){
+                        $address="";
+                    }
+                }
+                if($words[$i]=="user"){
+                    $user=$words[$i+2];
                 }
             }
             if($words[$i]=="Then"){
@@ -102,6 +122,18 @@ if ($fileRead) {
                         if($method=="addAdmin"){
                             if($status=="gagal"){
                                 fwrite($fileWrite,"\t\$actual_result=".$method."('".$username."',md5('".$password."'),'".$name."','".$email."','".$phone."','".$address."');\n");
+                                fwrite($fileWrite,"\t\$expected_result=".$page.";\n");
+                                fwrite($fileWrite,"\t\$this->assertEquals(\$actual_result->getUrl(),\$expected_result);\n}");
+                            }
+                        }
+                        if($method=="updateUser"){
+                            if($status=="berhasil"){
+                                fwrite($fileWrite,"\t\$actual_result=".$method."(".$user.",'".$password."','".$confirm_password."','".$phone."','".$address."');\n");
+                                fwrite($fileWrite,"\t\$expected_result=".$page.";\n");
+                                fwrite($fileWrite,"\t\$this->assertEquals(\$actual_result->getUrl(),\$expected_result);\n}");
+                            }
+                            if($status=="gagal"){
+                                fwrite($fileWrite,"\t\$actual_result=".$method."(".$user.",'".$password."','".$confirm_password."','".$phone."','".$address."');\n");
                                 fwrite($fileWrite,"\t\$expected_result=".$page.";\n");
                                 fwrite($fileWrite,"\t\$this->assertEquals(\$actual_result->getUrl(),\$expected_result);\n}");
                             }

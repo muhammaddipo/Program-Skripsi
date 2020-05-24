@@ -27,7 +27,7 @@
         if($password){
                 if(!$confirm_password){
                     //header("Location: ../pages/general/profile.php?statusUpdate=1");
-                    return new Redirect("Location: ../pages/general/profile.php?statusUpdate=2");
+                    return new Redirect("Location:../pages/general/profile.php?statusUpdate=2");
                     exit(); // 1: dua duanya ga diisi
                 }
         }
@@ -35,13 +35,13 @@
         if($confirm_password){
             if(!$password){
                 //header("Location: ../pages/general/profile.php?statusUpdate=1"); //1: salah satu dari password dan confirm password ga diisi 
-                return new Redirect("Location: ../pages/general/profile.php?statusUpdate=2");
+                return new Redirect("Location:../pages/general/profile.php?statusUpdate=2");
                 exit();
             }
             
             if($confirm_password != $password){
-                    header("Location: ../pages/general/profile.php?statusUpdate=2"); //2: password sama confirmed password ga sama       
-                    return new Redirect("Location: ../pages/general/profile.php?statusUpdate=1");
+                    //header("Location: ../pages/general/profile.php?statusUpdate=2"); //2: password sama confirmed password ga sama       
+                    return new Redirect("Location:../pages/general/profile.php?statusUpdate=1");
                     exit();        
             }else{
                     $sql.= "password=md5('$password') ";
@@ -80,12 +80,12 @@
             //statusUpdate = 4 artinya berhasil update password juga 
             if($pass){
                 //header("Location: ../pages/general/profile.php?statusUpdate=4");
-                return new Redirect("Location: ../pages/general/profile.php?statusUpdate=4");
+                return new Redirect("Location:../pages/general/profile.php?statusUpdate=4");
                 exit();
                 
             }else{
                 //header("Location: ../pages/general/profile.php?statusUpdate=3");
-                return new Redirect("Location: ../pages/general/profile.php?statusUpdate=3");
+                return new Redirect("Location:../pages/general/profile.php?statusUpdate=3");
                 exit();
             }
         }
