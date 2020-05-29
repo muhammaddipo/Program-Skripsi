@@ -193,7 +193,7 @@ if ($fileRead) {
     fclose($fileRead);
     fclose($fileWrite);
 } else {
-    // error opening the file.
+    echo "file tidak bisa dibaca";
 } 
 
 ?>
