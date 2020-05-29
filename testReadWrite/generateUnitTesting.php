@@ -22,6 +22,7 @@ $author="";
 $publication_year="";
 $publisher="";
 $theme="";
+//test
 if ($fileRead) {
     while (($line = fgets($fileRead)) !== false) {
         $words = preg_split('/\s+/',$line,-1,PREG_SPLIT_NO_EMPTY);
