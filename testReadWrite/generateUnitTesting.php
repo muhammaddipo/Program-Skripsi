@@ -1,15 +1,17 @@
 <?php
-$fileRead = fopen("C:\\xampp\\htdocs\\eLibrary\\scenario\\addBook.txt",'r');
-$fileWrite = fopen(__DIR__ . "/addBookUnitTesting.php",'w');
+$fileRead = fopen("C:\\xampp\\htdocs\\eLibrary\\scenario\\login.txt",'r');
+$fileWrite = fopen(__DIR__ . "/loginUnitTesting2.php",'w');
 fwrite($fileWrite,"<?php\n");
 $banyakTest=1;
+
 $feature="";
 $method="";
 $table="";
-$username="";
-$password="";
 $page="";
 $status="";
+
+$username="";
+$password="";
 $confirm_password="";
 $email="";
 $name="";
@@ -22,16 +24,19 @@ $author="";
 $publication_year="";
 $publisher="";
 $theme="";
+
 //test
 if ($fileRead) {
     while (($line = fgets($fileRead)) !== false) {
         $words = preg_split('/\s+/',$line,-1,PREG_SPLIT_NO_EMPTY);
+
         for($i=0;$i<count($words);$i++){
             if($words[$i]=="Feature:"){
                 $words[$i+1]=$words[$i+1];
                 fwrite($fileWrite,"require ('C:\\xampp\\htdocs\\eLibrary\\model\\".$words[$i+1].".php');\n");
                 fwrite($fileWrite,"class UnitTesting extends \\PHPUnit_Framework_TestCase{");
             }
+            
             if($words[$i]=="Scenario:"){
                 fwrite($fileWrite,"\n/** @test */\n");
                 fwrite($fileWrite,"public function unittest".$banyakTest."(){\n");
